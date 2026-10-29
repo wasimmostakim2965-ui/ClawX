@@ -15,3 +15,19 @@ test('homepage shows the Kynex brand mark in the sidebar', async ({ launchElectr
     await closeElectronApp(app);
   }
 });
+
+test('legacy setup route redirects to the homepage', async ({ launchElectronApp }) => {
+  const app = await launchElectronApp({ skipSetup: true });
+
+  try {
+    const page = await getStableWindow(app);
+    await page.evaluate(() => {
+      window.history.pushState({}, '', '/setup');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    });
+    await expect(page.getByTestId('main-layout')).toBeVisible();
+    await expect(page.getByTestId('setup-page')).toHaveCount(0);
+  } finally {
+    await closeElectronApp(app);
+  }
+});

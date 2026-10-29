@@ -2,8 +2,8 @@
  * Root Application Component
  * Handles routing and global providers
  */
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import { Component, useEffect } from 'react';
+import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { Component, useEffect, useRef, useState } from 'react';
 import type { ErrorInfo, ReactNode } from 'react';
 import { Toaster } from 'sonner';
 import i18n from './i18n';
@@ -17,7 +17,6 @@ import { Skills } from './pages/Skills';
 import { Cron } from './pages/Cron';
 import { Settings } from './pages/Settings';
 import { ComputerUse } from './pages/ComputerUse';
-import { Setup } from './pages/Setup';
 import { useSettingsStore } from './stores/settings';
 import { useUpdateStore } from './stores/update';
 import { useGatewayStore } from './stores/gateway';
@@ -26,6 +25,7 @@ import { rendererExtensionRegistry } from './extensions/registry';
 import { loadExternalRendererExtensions } from './extensions/_ext-bridge.generated';
 import { UpdateNotifier } from './components/update/UpdateNotifier';
 import { useNewChatAction } from './components/layout/use-new-chat-action';
+import { hostApi } from './lib/host-api';
 import { hostEvents } from './lib/host-events';
 import { useResolvedTheme } from './lib/use-resolved-theme';
 
@@ -103,6 +103,9 @@ function App() {
   const resolvedTheme = useResolvedTheme();
   const language = useSettingsStore((state) => state.language);
   const setupComplete = useSettingsStore((state) => state.setupComplete);
+  const markSetupComplete = useSettingsStore((state) => state.markSetupComplete);
+  const [settingsInitialized, setSettingsInitialized] = useState(false);
+  const backgroundSetupStarted = useRef(false);
   const initGateway = useGatewayStore((state) => state.init);
   const initUpdate = useUpdateStore((state) => state.init);
   const initProviders = useProviderStore((state) => state.init);
@@ -113,6 +116,7 @@ function App() {
 
     void initSettings().finally(() => {
       if (!cancelled) {
+        setSettingsInitialized(true);
         void initUpdate();
       }
     });
@@ -139,12 +143,30 @@ function App() {
     initProviders();
   }, [initProviders]);
 
-  // Redirect to setup wizard if not complete
+  // Preserve the existing first-run readiness/uv work, but run it without
+  // blocking the homepage behind the legacy setup wizard.
   useEffect(() => {
-    if (!setupComplete && !skipSetupForE2E && !location.pathname.startsWith('/setup')) {
-      navigate('/setup');
-    }
-  }, [setupComplete, skipSetupForE2E, location.pathname, navigate]);
+    if (!settingsInitialized || setupComplete || skipSetupForE2E || backgroundSetupStarted.current) return;
+    backgroundSetupStarted.current = true;
+    void (async () => {
+      try {
+        const runtime = await hostApi.openclaw.status();
+        if (!runtime.packageExists || !runtime.isBuilt) {
+          console.warn('[setup] Agent runtime is not ready; opening the main UI without the wizard.');
+          return;
+        }
+        const result = await hostApi.uv.installAll();
+        if (!result.success) {
+          console.warn('[setup] Background environment setup did not finish:', result.error);
+        }
+      } catch (error) {
+        console.warn('[setup] Background first-run setup failed:', error);
+      } finally {
+        markSetupComplete();
+        if (location.pathname.startsWith('/setup')) navigate('/', { replace: true });
+      }
+    })();
+  }, [settingsInitialized, setupComplete, skipSetupForE2E, markSetupComplete, location.pathname, navigate]);
 
   // Listen for navigation events from main process
   useEffect(() => {
@@ -191,8 +213,8 @@ function App() {
     <ErrorBoundary>
       <TooltipProvider delayDuration={300}>
         <Routes>
-          {/* Setup wizard (shown on first launch) */}
-          <Route path="/setup/*" element={<Setup />} />
+          {/* Legacy setup route: first-run users go straight to the main UI. */}
+          <Route path="/setup/*" element={<Navigate to="/" replace />} />
 
           {/* Main application routes */}
           <Route element={<MainLayout />}>
