@@ -149,24 +149,59 @@ function App() {
     if (!settingsInitialized || setupComplete || skipSetupForE2E || backgroundSetupStarted.current) return;
     backgroundSetupStarted.current = true;
     void (async () => {
+      const pollIntervalMs = 3_000;
+      const setupTimeoutMs = 10 * 60_000;
+      const startedAt = Date.now();
+      let gatewayStartAttempted = false;
+      let environmentSetupComplete = false;
       try {
-        const runtime = await hostApi.openclaw.status();
-        if (!runtime.packageExists || !runtime.isBuilt) {
-          console.warn('[setup] Agent runtime is not ready; opening the main UI without the wizard.');
-          return;
+        while (Date.now() - startedAt < setupTimeoutMs) {
+          const gateway = await hostApi.gateway.status();
+          useGatewayStore.getState().setStatus(gateway);
+
+          if (gateway.state !== 'running' || gateway.gatewayReady === false) {
+            const startupHasStalled = Date.now() - startedAt >= 15_000;
+            if (
+              !gatewayStartAttempted
+              && (gateway.state === 'error' || (gateway.state === 'stopped' && startupHasStalled))
+            ) {
+              gatewayStartAttempted = true;
+              await useGatewayStore.getState().start();
+            }
+            await new Promise((resolve) => setTimeout(resolve, pollIntervalMs));
+            continue;
+          }
+
+          const runtime = await hostApi.openclaw.status();
+          if (!runtime.packageExists || !runtime.isBuilt) {
+            await new Promise((resolve) => setTimeout(resolve, pollIntervalMs));
+            continue;
+          }
+
+          if (!environmentSetupComplete) {
+            const result = await hostApi.uv.installAll();
+            if (!result.success) {
+              console.warn('[setup] Background environment setup failed; it will retry next launch:', result.error);
+              return;
+            }
+            environmentSetupComplete = true;
+          }
+
+          const readyGateway = await hostApi.gateway.status();
+          useGatewayStore.getState().setStatus(readyGateway);
+          if (readyGateway.state === 'running' && readyGateway.gatewayReady !== false) {
+            markSetupComplete();
+            return;
+          }
+
+          await new Promise((resolve) => setTimeout(resolve, pollIntervalMs));
         }
-        const result = await hostApi.uv.installAll();
-        if (!result.success) {
-          console.warn('[setup] Background environment setup did not finish:', result.error);
-        }
+        console.warn('[setup] Background setup timed out; the app will retry on the next launch.');
       } catch (error) {
-        console.warn('[setup] Background first-run setup failed:', error);
-      } finally {
-        markSetupComplete();
-        if (location.pathname.startsWith('/setup')) navigate('/', { replace: true });
+        console.warn('[setup] Background first-run setup failed; it will retry next launch:', error);
       }
     })();
-  }, [settingsInitialized, setupComplete, skipSetupForE2E, markSetupComplete, location.pathname, navigate]);
+  }, [settingsInitialized, setupComplete, skipSetupForE2E, markSetupComplete]);
 
   // Listen for navigation events from main process
   useEffect(() => {
