@@ -226,7 +226,7 @@ export async function createMenu(language?: string, mainWindowProvider?: () => B
         {
           label: labels.help.reportIssue,
           click: async () => {
-            await shell.openExternal('https://github.com/ValueCell-ai/ClawX/issues');
+            await shell.openExternal('https://github.com/wasimmostakim2965-ui/KYNEX/issues');
           },
         },
         { type: 'separator' },

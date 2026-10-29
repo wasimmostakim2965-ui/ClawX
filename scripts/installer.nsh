@@ -107,7 +107,7 @@ FunctionEnd
     DetailPrint `Closing running "${PRODUCT_NAME}"...`
 
     # Kill ALL processes whose executable lives inside $INSTDIR.
-    # This covers ClawX.exe (multiple Electron processes), openclaw-gateway.exe,
+    # This covers KYNEX.exe (multiple Electron processes), openclaw-gateway.exe,
     # python.exe (skills runtime), uv.exe (package manager), and any other
     # child process that might hold file locks in the installation directory.
     #
@@ -140,7 +140,7 @@ FunctionEnd
       ${nsProcess::Unload}
   ${endIf}
 
-  ; Even if ClawX.exe was not detected as running, orphan child processes
+  ; Even if KYNEX.exe was not detected as running, orphan child processes
   ; (python.exe, openclaw-gateway.exe, uv.exe, etc.) from a previous crash
   ; or unclean shutdown may still hold file locks inside $INSTDIR.
   ; Unconditionally kill any process whose executable lives in the install dir.
@@ -168,7 +168,7 @@ FunctionEnd
   ; Do not continue while the old UI process is still alive. Continuing in that
   ; state can leave the running old process/window in place, making the user see
   ; the old version after an otherwise successful extract.  Use process-list
-  ; commands instead of nsProcess here: field diagnostics showed ClawX.exe can
+  ; commands instead of nsProcess here: field diagnostics showed KYNEX.exe can
   ; remain alive while the old installer still reports success; this check must
   ; fail closed even when taskkill or the nsProcess plugin misses/elevates poorly.
   StrCpy $R7 0

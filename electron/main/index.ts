@@ -68,6 +68,7 @@ const WINDOWS_APP_USER_MODEL_ID = 'app.clawx.desktop';
 const isE2EMode = process.env.CLAWX_E2E === '1';
 const requestedUserDataDir = process.env.CLAWX_USER_DATA_DIR?.trim();
 const requestedRemoteDebuggingPort = process.env.CLAWX_REMOTE_DEBUGGING_PORT?.trim();
+app.setName('KYNEX');
 
 if (requestedRemoteDebuggingPort) {
   app.commandLine.appendSwitch('remote-debugging-port', requestedRemoteDebuggingPort);
@@ -75,6 +76,9 @@ if (requestedRemoteDebuggingPort) {
 
 if (isE2EMode && requestedUserDataDir) {
   app.setPath('userData', requestedUserDataDir);
+} else {
+  // Keep user data in the existing directory across the ClawX → KYNEX rename.
+  app.setPath('userData', join(app.getPath('appData'), 'ClawX'));
 }
 
 // On Linux, set CHROME_DESKTOP so Chromium can find the correct .desktop file.

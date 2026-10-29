@@ -31,17 +31,29 @@ function isCurrentOpenClawPath(p: string): boolean {
 
 export function buildDefaultClawXIdentityContent(): string {
   return [
-    '# IDENTITY.md - ClawX',
+    '# IDENTITY.md - KYNEX',
     '',
-    '- **Name:** ClawX',
+    '- **Name:** KYNEX',
     '- **Creature:** desktop AI assistant',
     '- **Vibe:** concise, capable, and practical',
     '- **Emoji:** 🐾',
     '- **Avatar:**',
     '',
-    'ClawX uses a default desktop identity instead of chat-first bootstrap.',
+    'KYNEX uses a default desktop identity instead of chat-first bootstrap.',
     '',
   ].join('\n');
+}
+
+function migratePreviousDefaultIdentity(existing: string): string | null {
+  const normalized = existing.replace(/\r\n/g, '\n');
+  const previousDefaultMarker = 'ClawX uses a default desktop identity instead of chat-first bootstrap.';
+  if (!normalized.includes(previousDefaultMarker) || !/^\s*- \*\*Name:\*\* ClawX\s*$/m.test(normalized)) {
+    return null;
+  }
+  return normalized
+    .replace('# IDENTITY.md - ClawX', '# IDENTITY.md - KYNEX')
+    .replace(/(^\s*- \*\*Name:\*\* )ClawX(\s*$)/m, '$1KYNEX$2')
+    .replace(previousDefaultMarker, 'KYNEX uses a default desktop identity instead of chat-first bootstrap.');
 }
 
 export function isOpenClawIdentityTemplate(content: string): boolean {
@@ -94,6 +106,12 @@ export async function ensureClawXIdentityFile(
     if (isOpenClawIdentityTemplate(existing) && existing !== defaultIdentity) {
       await writeFile(identityPath, defaultIdentity, 'utf-8');
       wroteIdentity = true;
+    } else {
+      const migratedIdentity = migratePreviousDefaultIdentity(existing);
+      if (migratedIdentity && migratedIdentity !== existing) {
+        await writeFile(identityPath, migratedIdentity, 'utf-8');
+        wroteIdentity = true;
+      }
     }
   }
 

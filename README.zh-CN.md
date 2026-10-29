@@ -1,16 +1,16 @@
 
 <p align="center">
-  <img src="src/assets/logo.svg" width="128" height="128" alt="ClawX Logo" />
+  <img src="src/assets/logo.svg" width="128" height="128" alt="KYNEX Logo" />
 </p>
 
-<h1 align="center">ClawX</h1>
+<h1 align="center">KYNEX</h1>
 
 <p align="center">
   <strong>OpenClaw AI 智能体的桌面客户端</strong>
 </p>
 
 <p align="center">
-  <a href="#为什么选择-clawx">为什么选择 ClawX</a> •
+  <a href="#为什么选择-clawx">为什么选择 KYNEX</a> •
   <a href="#快速上手">快速上手</a> •
   <a href="#系统架构">系统架构</a> •
   <a href="#开发指南">开发指南</a> •
@@ -24,7 +24,7 @@
   <a href="https://discord.com/invite/84Kex3GGAh" target="_blank">
   <img src="https://img.shields.io/discord/1399603591471435907?logo=discord&labelColor=%20%235462eb&logoColor=%20%23f5f5f5&color=%20%235462eb" alt="chat on Discord" />
   </a>
-  <img src="https://img.shields.io/github/downloads/ValueCell-ai/ClawX/total?color=%23027DEB" alt="Downloads" />
+  <img src="https://img.shields.io/github/downloads/wasimmostakim2965-ui/KYNEX/total?color=%23027DEB" alt="Downloads" />
   <img src="https://img.shields.io/badge/license-MIT-green" alt="License" />
 </p>
 
@@ -36,11 +36,11 @@
 
 ## 概述
 
-**ClawX** 是连接强大 AI 智能体与普通用户之间的桥梁。基于 [OpenClaw](https://github.com/OpenClaw) 构建，它将命令行式的 AI 编排转变为易用、美观的桌面体验——无需使用终端。
+**KYNEX** 是连接强大 AI 智能体与普通用户之间的桥梁。基于 [OpenClaw](https://github.com/OpenClaw) 构建，它将命令行式的 AI 编排转变为易用、美观的桌面体验——无需使用终端。
 
-无论是自动化工作流、连接通讯软件，还是调度智能定时任务，ClawX 都能提供高效易用的图形界面，帮助你充分发挥 AI 智能体的能力。
+无论是自动化工作流、连接通讯软件，还是调度智能定时任务，KYNEX 都能提供高效易用的图形界面，帮助你充分发挥 AI 智能体的能力。
 
-ClawX 预置了最佳实践的模型供应商配置，原生支持 Windows 平台以及多语言设置。上下文压缩预留由 OpenClaw 自行计算；已完成的回合会通过摘要延续，而不会在压缩后逐字重放。当然，你也可以通过 **设置 → 高级 → 开发者模式** 来进行精细的高级配置。
+KYNEX 预置了最佳实践的模型供应商配置，原生支持 Windows 平台以及多语言设置。上下文压缩预留由 OpenClaw 自行计算；已完成的回合会通过摘要延续，而不会在压缩后逐字重放。当然，你也可以通过 **设置 → 高级 → 开发者模式** 来进行精细的高级配置。
 
 <p align="center"><strong style="font-size:1.1em; text-decoration: underline;">如需完整的企业版、专属服务支持或面向您业务场景的定制化落地辅导，请联系 <a href="mailto:public@valuecell.ai">public@valuecell.ai</a>。</strong></p>
 
@@ -60,11 +60,11 @@ ClawX 预置了最佳实践的模型供应商配置，原生支持 Windows 平�
     <td align="center"><img src="resources/screenshot/zh/settings.png" alt="Settings"><br><em>设置</em></td>
   </tr>
 </table>
-## 为什么选择 ClawX
+## 为什么选择 KYNEX
 
-构建 AI 智能体不应该需要精通命令行。ClawX 的设计理念很简单：**强大的技术值得拥有一个尊重用户时间的界面**。ClawX 直接基于官方 OpenClaw 核心构建。无需单独安装，我们将运行时嵌入应用内部，提供开箱即用的无缝体验，并致力于与上游 OpenClaw 项目保持严格同步，确保你始终可以使用官方发布的最新功能、稳定性改进和生态兼容性。
+构建 AI 智能体不应该需要精通命令行。KYNEX 的设计理念很简单：**强大的技术值得拥有一个尊重用户时间的界面**。KYNEX 直接基于官方 OpenClaw 核心构建。无需单独安装，我们将运行时嵌入应用内部，提供开箱即用的无缝体验，并致力于与上游 OpenClaw 项目保持严格同步，确保你始终可以使用官方发布的最新功能、稳定性改进和生态兼容性。
 
-| 痛点 | ClawX 解决方案 |
+| 痛点 | KYNEX 解决方案 |
 |------|----------------|
 | 复杂的命令行配置 | 一键安装，配合引导式设置向导 |
 | 手动编辑配置文件 | 可视化设置界面，实时校验 |
@@ -78,13 +78,13 @@ ClawX 预置了最佳实践的模型供应商配置，原生支持 Windows 平�
 - **🎯 零配置门槛**：从安装到第一次 AI 对话，全程指引式图形界面，无需终端命令、YAML 配置或环境变量。
 - **💬 智能聊天界面**：多会话上下文与历史记录，流式 Markdown 渲染（语法高亮、CJK 排版、表格、KaTeX 公式）、`@agent` 直接路由与 `/技能` 内联卡片，内嵌子 Agent 状态、实时只读下钻及直接返回父会话，工作空间优先的会话侧边栏，以及 Markdown、`.docx`、`.pptx` 和本地 HTML 的只读预览。 使用 **Cmd+N**（macOS）、**Ctrl+N**（Windows/Linux）或**文件 → 新对话**，可在当前窗口中新建会话。
 - **🎙️ 语音转文字输入（开发者模式）**：在“设置”中开启**开发者模式**后，可在聊天输入框点击麦克风按钮进行语音口述，录音经自定义的语音转写服务识别后插入光标处。前往 **模型 → 语音转写** 选择 API 类型（OpenAI Audio Transcriptions 或 OpenAI Chat Completions 的 `input_audio` 方式）及对应服务商预设（OpenAI / Groq / 硅基流动 / 阿里云百炼 / 自定义）并配置 API Key。
-  - 点击麦克风时会检查权限。若访问被拒绝，对话框提供「打开系统设置」操作；策略限制可能需要管理员处理。macOS 用户请在「隐私与安全性 → 麦克风」中启用 ClawX，然后完全退出并重启。开发环境中权限可能属于启动它的 IDE 或终端，也需要重启。Windows 用户需允许桌面应用访问麦克风。关闭对话框后再次点击麦克风重试，录音不会自动开始。
-- **🤖 Agent 生命周期管理**：可在桌面端创建和管理专用 Agent。删除非默认 Agent 时必须明确确认；此操作会永久删除其由 ClawX 管理的工作空间及所有关联聊天记录，相关会话和已删除的工作空间条目会立即从聊天界面消失且无法恢复。
-- **🧰 导出问题现场**：使用侧边栏快捷入口，或前往“设置 > 支持”查看导出内容，即可在桌面生成包含已脱敏 OpenClaw 配置和可用诊断日志（ClawX 日志、`~/.openclaw/logs`，以及 OpenClaw 临时目录中最新的运行日志，例如 Windows 上的 `%TEMP%\openclaw`）的 ZIP。会话为可选项；如有选择，则一并包含可用的会话 JSONL，完成后 ClawX 会显示保存路径。
-- **📡 多频道管理**：同时配置和监控多个 AI 频道，每个频道独立运行并支持多账号；内置腾讯官方个人微信渠道插件，以及映射到现有 `dingtalk` 身份的官方钉钉连接器。添加钉钉或升级已有钉钉配置后，ClawX 会配置随包提供的工作台 CLI，并提供可选的钉钉工作台 OAuth，用于日历、文档等 `dws` 技能；跳过授权不影响聊天，之后也可从已配置频道发起或取消授权。组织主管理员需要先在钉钉开发者后台开启“允许成员通过 CLI 访问其个人数据”。
-- **⏰ 定时任务自动化**：可视化定义触发器与时间间隔，让 AI 智能体 7×24 小时自动运行；支持周期（每小时/每天/工作日/每周/自定义 cron）与单次执行，并可将结果自动投递到外部频道。ClawX 会隐藏 OpenClaw 管理的内部维护作业，并默认关闭记忆梦境功能。
+  - 点击麦克风时会检查权限。若访问被拒绝，对话框提供「打开系统设置」操作；策略限制可能需要管理员处理。macOS 用户请在「隐私与安全性 → 麦克风」中启用 KYNEX，然后完全退出并重启。开发环境中权限可能属于启动它的 IDE 或终端，也需要重启。Windows 用户需允许桌面应用访问麦克风。关闭对话框后再次点击麦克风重试，录音不会自动开始。
+- **🤖 Agent 生命周期管理**：可在桌面端创建和管理专用 Agent。删除非默认 Agent 时必须明确确认；此操作会永久删除其由 KYNEX 管理的工作空间及所有关联聊天记录，相关会话和已删除的工作空间条目会立即从聊天界面消失且无法恢复。
+- **🧰 导出问题现场**：使用侧边栏快捷入口，或前往“设置 > 支持”查看导出内容，即可在桌面生成包含已脱敏 OpenClaw 配置和可用诊断日志（KYNEX 日志、`~/.openclaw/logs`，以及 OpenClaw 临时目录中最新的运行日志，例如 Windows 上的 `%TEMP%\openclaw`）的 ZIP。会话为可选项；如有选择，则一并包含可用的会话 JSONL，完成后 KYNEX 会显示保存路径。
+- **📡 多频道管理**：同时配置和监控多个 AI 频道，每个频道独立运行并支持多账号；内置腾讯官方个人微信渠道插件，以及映射到现有 `dingtalk` 身份的官方钉钉连接器。添加钉钉或升级已有钉钉配置后，KYNEX 会配置随包提供的工作台 CLI，并提供可选的钉钉工作台 OAuth，用于日历、文档等 `dws` 技能；跳过授权不影响聊天，之后也可从已配置频道发起或取消授权。组织主管理员需要先在钉钉开发者后台开启“允许成员通过 CLI 访问其个人数据”。
+- **⏰ 定时任务自动化**：可视化定义触发器与时间间隔，让 AI 智能体 7×24 小时自动运行；支持周期（每小时/每天/工作日/每周/自定义 cron）与单次执行，并可将结果自动投递到外部频道。KYNEX 会隐藏 OpenClaw 管理的内部维护作业，并默认关闭记忆梦境功能。
 - **🧩 可扩展技能系统**：本地优先的技能管理，扫描托管与 workspace 技能目录，无需依赖 Gateway 即可启用或停用技能；预装文档处理技能（`pdf`、`xlsx`、`docx`、`pptx`）。
-- **🔐 安全的供应商集成**：支持 OpenAI、Anthropic、Z.AI / GLM 等供应商，凭证经系统原生密钥链安全存储，同时提供自定义 Provider 与兼容网关的降级探测；中文界面的供应商目录还会提供 TokenDance，支持带 PKCE 与 ClawX 请求归因的浏览器 OAuth。在开发者模式下，请前往 **模型 → 图像生成** 配置生图端点；生成完成的图片会直接显示在聊天中，而不会暴露 OpenClaw 的原始 `MEDIA:` 路径。
+- **🔐 安全的供应商集成**：支持 OpenAI、Anthropic、Z.AI / GLM 等供应商，凭证经系统原生密钥链安全存储，同时提供自定义 Provider 与兼容网关的降级探测；中文界面的供应商目录还会提供 TokenDance，支持带 PKCE 与 KYNEX 请求归因的浏览器 OAuth。在开发者模式下，请前往 **模型 → 图像生成** 配置生图端点；生成完成的图片会直接显示在聊天中，而不会暴露 OpenClaw 的原始 `MEDIA:` 路径。
 - **💻 本机 Computer Use**：在 macOS 13+（Intel 或 Apple 芯片）和 Windows x64 上，Agent 可通过内置的原生 CUA CLI 操作窗口、辅助功能元素、菜单和桌面，并验证结果。主显示器截图和输入能力继续保留。驱动在本机运行，不需要 OpenClaw 节点配对或运行时额外下载组件。
 - **🌙 自适应主题**：支持浅色、深色与跟随系统主题。
 - **🚀 开机启动控制**：在 设置 → 通用 中开启开机自动启动。
@@ -104,7 +104,7 @@ ClawX 预置了最佳实践的模型供应商配置，原生支持 Windows 平�
 ### 系统要求
 
 - **操作系统**：macOS 11+、Windows 10+ 或 Linux（Ubuntu 20.04+）
-- **Computer Use**：macOS 13+ x64/arm64，或 Windows 10+ x64；ClawX 在其他受支持平台上仍可正常使用，但不提供此功能
+- **Computer Use**：macOS 13+ x64/arm64，或 Windows 10+ x64；KYNEX 在其他受支持平台上仍可正常使用，但不提供此功能
 - **内存**：最低 4GB RAM（推荐 8GB）
 - **存储空间**：1GB 可用磁盘空间
 
@@ -112,14 +112,14 @@ ClawX 预置了最佳实践的模型供应商配置，原生支持 Windows 平�
 
 #### 预构建版本（推荐）
 
-从 [Releases](https://github.com/ValueCell-ai/ClawX/releases) 页面下载适用于你平台的最新版本。
+从 [Releases](https://github.com/wasimmostakim2965-ui/KYNEX/releases) 页面下载适用于你平台的最新版本。
 
 #### 从源码开始
 
 ```bash
 # 克隆仓库
-git clone https://github.com/ValueCell-ai/ClawX.git
-cd ClawX
+git clone https://github.com/wasimmostakim2965-ui/KYNEX.git
+cd KYNEX
 
 # 初始化项目
 pnpm run init
@@ -129,7 +129,7 @@ pnpm dev
 ```
 ### 首次启动
 
-首次启动 ClawX 时，**设置向导** 将引导你完成以下步骤：
+首次启动 KYNEX 时，**设置向导** 将引导你完成以下步骤：
 
 1. **语言与区域** – 配置你的首选语言和地区
 2. **AI 供应商** – 通过 API 密钥或 OAuth（支持浏览器/设备登录的供应商）添加账号
@@ -138,15 +138,15 @@ pnpm dev
 
 ### 升级已有 OpenClaw 数据
 
-ClawX 会在启动写入前，在 OpenClaw 状态目录下保留私有快照 `backups/clawx-openclaw-2026.10.5-pre-migration`。快照包含旧会话文件、认证和媒体，并通过 SQLite 在线备份纳入已提交的 WAL 数据。无法完成快照时停止启动；Gateway 就绪不会自动删除快照。OpenClaw 会先自行处理待完成的 schema 和旧版认证迁移，之后 ClawX 才同步供应商凭据，因此中断后可重试而不会先被 ClawX 改写迁移源文件。请在确认升级正常后再手动删除快照以回收空间。快照包含密钥，请勿分享。运行时二进制、符号链接目标和外部工作区不在快照范围内，手动回退前请另行备份。
+KYNEX 会在启动写入前，在 OpenClaw 状态目录下保留私有快照 `backups/clawx-openclaw-2026.10.5-pre-migration`。快照包含旧会话文件、认证和媒体，并通过 SQLite 在线备份纳入已提交的 WAL 数据。无法完成快照时停止启动；Gateway 就绪不会自动删除快照。OpenClaw 会先自行处理待完成的 schema 和旧版认证迁移，之后 KYNEX 才同步供应商凭据，因此中断后可重试而不会先被 KYNEX 改写迁移源文件。请在确认升级正常后再手动删除快照以回收空间。快照包含密钥，请勿分享。运行时二进制、符号链接目标和外部工作区不在快照范围内，手动回退前请另行备份。
 
-OpenClaw 2026.10.5 更换了两个渠道插件，ClawX 会在首次启动 Gateway 前完成迁移。QQ 机器人从 `@openclaw/qqbot` 切换到腾讯 QQBot 2.0（`@tencent-connect/openclaw-qqbot`，插件 id `openclaw-qqbot`），默认账号移到 `channels.qqbot` 顶层，原本开放的私聊保持开放（使用审批标记 `openclaw:approval-disabled`）。带审批、密钥文件或群命令策略的 QQ 机器人配置交给 OpenClaw Doctor 处理。飞书从 `@larksuite/openclaw-lark` 切换到官方 `@openclaw/feishu`，应用凭据保持不变；官方插件提供 14 个飞书工具（原为 39 个），不再提供日历、任务、用户 OAuth、表格和搜索类工具。
+OpenClaw 2026.10.5 更换了两个渠道插件，KYNEX 会在首次启动 Gateway 前完成迁移。QQ 机器人从 `@openclaw/qqbot` 切换到腾讯 QQBot 2.0（`@tencent-connect/openclaw-qqbot`，插件 id `openclaw-qqbot`），默认账号移到 `channels.qqbot` 顶层，原本开放的私聊保持开放（使用审批标记 `openclaw:approval-disabled`）。带审批、密钥文件或群命令策略的 QQ 机器人配置交给 OpenClaw Doctor 处理。飞书从 `@larksuite/openclaw-lark` 切换到官方 `@openclaw/feishu`，应用凭据保持不变；官方插件提供 14 个飞书工具（原为 39 个），不再提供日历、任务、用户 OAuth、表格和搜索类工具。
 
-OpenClaw 2026.10 要求对非官方安装的插件授权其能力。对于 ClawX 自带且已启用的插件（钉钉、企业微信、飞书、QQ 机器人和 OpenAI 图片中转），ClawX 会在 Gateway 启动前执行 `openclaw plugins enable --accept-capabilities` 完成授权。这只在这些插件安装或升级后发生，当次启动每个插件约多花 10 秒。ClawX 不会启用你关闭的插件，也不会替你自己安装的插件授权。
+OpenClaw 2026.10 要求对非官方安装的插件授权其能力。对于 KYNEX 自带且已启用的插件（钉钉、企业微信、飞书、QQ 机器人和 OpenAI 图片中转），KYNEX 会在 Gateway 启动前执行 `openclaw plugins enable --accept-capabilities` 完成授权。这只在这些插件安装或升级后发生，当次启动每个插件约多花 10 秒。KYNEX 不会启用你关闭的插件，也不会替你自己安装的插件授权。
 
 ### 本机 Computer Use
 
-ClawX 内置 CUA SDK 和 Driver **0.37.0**。在 macOS 和 Windows 上，Main 的嵌入式 daemon 选项和 Gateway 启动的 CLI 环境均设置 `CUA_DRIVER_RS_TELEMETRY_ENABLED=false`，关闭 CUA 产品遥测。SDK 从 0.22.0 起允许此环境变量，取代了 0.21.0 仅关闭 CLI 遥测的临时方案。此设置不会修改系统环境变量、独立 CUA 安装的设置或 ClawX 自身的遥测偏好。
+KYNEX 内置 CUA SDK 和 Driver **0.37.0**。在 macOS 和 Windows 上，Main 的嵌入式 daemon 选项和 Gateway 启动的 CLI 环境均设置 `CUA_DRIVER_RS_TELEMETRY_ENABLED=false`，关闭 CUA 产品遥测。SDK 从 0.22.0 起允许此环境变量，取代了 0.21.0 仅关闭 CLI 遥测的临时方案。此设置不会修改系统环境变量、独立 CUA 安装的设置或 KYNEX 自身的遥测偏好。
 
 Windows 的 PE 控制台子系统转 GUI 补丁仍与遥测关闭设置一起保留。新版 SDK 已抑制内嵌 daemon 的控制台窗口，但不代表所有 CLI 子进程路径均已验证；重新构建的 Windows 启动、CLI 输出和闪窗行为仍需原生验证。详见[验证历史与限制](harness/reference/computer-use-cli-validation.md)。
 
@@ -156,24 +156,24 @@ Computer Use 是可选功能，**默认关闭**，包括尚未明确选择的已
 CUA 与 Gateway 独立初始化。Main 在 SDK 就绪握手后发布连接信息，启动预算为 8 秒，停止预算为 2 秒；退出应用会取消正在进行的原生启动。管理页自动刷新状态，显示启动进度和不可用原因，并提供**重试启动**，无需关闭再开启，也不会重新请求权限。
 Gateway 冷启动就绪等待有明确的 120 秒上限；如果自有进程仍存活但一直不提供就绪握手，Main 会先回收该进程，再安排恢复。
 
-Agent 通过 OpenClaw 现有的 `exec` 工具调用内置原生 CUA CLI，再通过支持图片的 `read` 工具查看截图文件。此路径不再使用 ClawX 的 `computer` 工具、OpenClaw 插件或 MCP 代理。在受支持平台上可使用固定版本 CLI 的完整原生能力，包括窗口、辅助功能元素（AX）、菜单、浏览器操作和 `verify_state`，不再受 ClawX 自定义操作子集限制。主显示器截图、移动、点击、拖动、滚动、文本输入、组合键和有限时长等待继续可用；具体命令仍受平台、应用和系统权限限制。
+Agent 通过 OpenClaw 现有的 `exec` 工具调用内置原生 CUA CLI，再通过支持图片的 `read` 工具查看截图文件。此路径不再使用 KYNEX 的 `computer` 工具、OpenClaw 插件或 MCP 代理。在受支持平台上可使用固定版本 CLI 的完整原生能力，包括窗口、辅助功能元素（AX）、菜单、浏览器操作和 `verify_state`，不再受 KYNEX 自定义操作子集限制。主显示器截图、移动、点击、拖动、滚动、文本输入、组合键和有限时长等待继续可用；具体命令仍受平台、应用和系统权限限制。
 
-macOS 管理页只读显示**辅助功能**和**屏幕录制**状态。启动、激活和启用开关均不会请求权限；需先启用功能，再明确点击**请求权限**。请求不保证系统再次弹窗；如果权限仍未授予，页面会显示操作指引，而不是静默返回原状态。请在系统设置 > 隐私与安全性中检查辅助功能和屏幕与系统音频录制（旧版 macOS 为屏幕录制）。以系统实际列出的应用为准：安装版通常是 ClawX，开发环境可能归属于启动它的终端或 IDE，例如 Ghostty 或 VS Code。修改授权后请重启 ClawX，必要时也重启启动它的应用。屏幕权限检查无法区分从未请求与此前拒绝。关闭功能不会撤销系统授权。权限或驱动缺失时驱动不可用，但不阻止聊天或 Gateway 启动。
+macOS 管理页只读显示**辅助功能**和**屏幕录制**状态。启动、激活和启用开关均不会请求权限；需先启用功能，再明确点击**请求权限**。请求不保证系统再次弹窗；如果权限仍未授予，页面会显示操作指引，而不是静默返回原状态。请在系统设置 > 隐私与安全性中检查辅助功能和屏幕与系统音频录制（旧版 macOS 为屏幕录制）。以系统实际列出的应用为准：安装版通常是 KYNEX，开发环境可能归属于启动它的终端或 IDE，例如 Ghostty 或 VS Code。修改授权后请重启 KYNEX，必要时也重启启动它的应用。屏幕权限检查无法区分从未请求与此前拒绝。关闭功能不会撤销系统授权。权限或驱动缺失时驱动不可用，但不阻止聊天或 Gateway 启动。
 
-内置 **computer-use** Skill 保留 `/computer-use` 选择器命令，基于 [CUA 0.37.0 随附的官方 Skill](https://github.com/trycua/cua/tree/2d2f99228d4d2508dc6fcc84c176b296e146714a/libs/cua-driver/rust/Skills/cua-driver)，来源固定为标签 `cua-driver-rs-v0.37.0`、提交 `2d2f99228d4d2508dc6fcc84c176b296e146714a`，而非持续变化的上游 `main`。MIT 许可的文档和许可证离线随包分发，附有简短的 ClawX 入口说明，涵盖 Main 端点、权限、会话和图片处理。适合的任务采用有界 `run_steps` / `run_script` 流程，并验证结果，不重放完成状态不明的输入。当前逐次 CLI 集成不支持录制，因为录制停止和状态查询需要持有录制的持续连接。
+内置 **computer-use** Skill 保留 `/computer-use` 选择器命令，基于 [CUA 0.37.0 随附的官方 Skill](https://github.com/trycua/cua/tree/2d2f99228d4d2508dc6fcc84c176b296e146714a/libs/cua-driver/rust/Skills/cua-driver)，来源固定为标签 `cua-driver-rs-v0.37.0`、提交 `2d2f99228d4d2508dc6fcc84c176b296e146714a`，而非持续变化的上游 `main`。MIT 许可的文档和许可证离线随包分发，附有简短的 KYNEX 入口说明，涵盖 Main 端点、权限、会话和图片处理。适合的任务采用有界 `run_steps` / `run_script` 流程，并验证结果，不重放完成状态不明的输入。当前逐次 CLI 集成不支持录制，因为录制停止和状态查询需要持有录制的持续连接。
 
-**ClawX 完全管理 `~/.openclaw/skills/computer-use` 目录。** 每次启动都会将与当前内置包不同的同名安装整体替换为内置内容，包括覆盖用户修改、移除额外文件和目录；内容一致时不做改动。自定义版本必须使用其他 Skill 名称和目录。其他名称的 Skill 和设置（包括 Computer Use 启用偏好）保持不变。替换先在暂存位置完成复制，并保留发布失败时的回滚；同名符号链接只替换链接本身，不跟随或删除其外部目标。比较以当前内置包为准，不维护历史安装哈希，也不改变官方 CUA 0.37.0 文档字节或来源校验。选择 Skill 不会启用服务或授予系统权限。详见 [Skill 来源与集成](harness/reference/computer-use-skill.md)。
+**KYNEX 完全管理 `~/.openclaw/skills/computer-use` 目录。** 每次启动都会将与当前内置包不同的同名安装整体替换为内置内容，包括覆盖用户修改、移除额外文件和目录；内容一致时不做改动。自定义版本必须使用其他 Skill 名称和目录。其他名称的 Skill 和设置（包括 Computer Use 启用偏好）保持不变。替换先在暂存位置完成复制，并保留发布失败时的回滚；同名符号链接只替换链接本身，不跟随或删除其外部目标。比较以当前内置包为准，不维护历史安装哈希，也不改变官方 CUA 0.37.0 文档字节或来源校验。选择 Skill 不会启用服务或授予系统权限。详见 [Skill 来源与集成](harness/reference/computer-use-skill.md)。
 
 截图文件位于当前本机 Agent 工作区中由任务管理的目录，但读取图片供模型分析时，内容可能发送给模型提供商。请避免截取敏感窗口。此功能要求本机执行、工作区访问及模型/提供商图片支持；沙箱或远程上下文不兼容时应报告限制，不得放宽全局 shell 审批或另启驱动。Skill 指导不是 shell 沙箱或全局操作锁。取消 `exec` 无法撤销已被接受的原生操作，也不保证原生紧急停止。驱动重启或完成状态未知时，应重新发现端点并观察当前状态，再决定后续操作，不要盲目重放输入。涉及重大影响或对外操作时需确认。
 
-> Web search 说明：ClawX 会在 Agent 和 Gateway 两层策略中禁用 OpenClaw 的通用 `web_search` 工具。
+> Web search 说明：KYNEX 会在 Agent 和 Gateway 两层策略中禁用 OpenClaw 的通用 `web_search` 工具。
 > 这也包括 Moonshot（Kimi）搜索；受管浏览器自动化和 `web_fetch` 仍然可用。
 >
-> 内部工具说明：ClawX 还会在两层策略中对 Agent 禁用 `gateway`、`nodes`、`create_goal`、`get_goal` 和 `update_goal`。ClawX 应用自身的 Gateway RPC 不受影响，消息、会话编排和 Agent 发现工具仍然可用。
+> 内部工具说明：KYNEX 还会在两层策略中对 Agent 禁用 `gateway`、`nodes`、`create_goal`、`get_goal` 和 `update_goal`。KYNEX 应用自身的 Gateway RPC 不受影响，消息、会话编排和 Agent 发现工具仍然可用。
 
 ### 代理设置
 
-ClawX 内置了代理设置，适用于需要通过本地代理客户端访问外网的场景，包括 Electron 本身、OpenClaw Gateway，以及 Telegram 这类频道的联网请求。
+KYNEX 内置了代理设置，适用于需要通过本地代理客户端访问外网的场景，包括 Electron 本身、OpenClaw Gateway，以及 Telegram 这类频道的联网请求。
 
 打开 **设置 → 网关 → 代理**，配置以下内容：
 
@@ -185,12 +185,12 @@ ClawX 内置了代理设置，适用于需要通过本地代理客户端访问�
 
 ## 系统架构
 
-ClawX 采用 **双进程 + Host API 统一接入架构**：React 渲染进程只通过统一的 host-api/api-client 抽象与后端交互，协议选择、Gateway 生命周期与 ACP Chat stdio bridge 全部由 Electron 主进程统一管理。
+KYNEX 采用 **双进程 + Host API 统一接入架构**：React 渲染进程只通过统一的 host-api/api-client 抽象与后端交互，协议选择、Gateway 生命周期与 ACP Chat stdio bridge 全部由 Electron 主进程统一管理。
 
 - **进程模型**：Electron 主进程负责窗口、网关进程监控、系统集成与自动更新；OpenClaw Gateway 作为独立运行时进程提供 AI 编排、频道和技能能力；渲染层不直接访问本地端点。
 - **本机 Computer Use**：Electron Main 保留 `EmbeddedCuaDriverHost`、原生 SDK 加载、权限检查和 daemon 监督。`CLAWX_CUA_CONNECTION_FILE` 指向私有描述符 `{ v: 2, generation, driverVersion, binaryPath, socketPath }`。OpenClaw 现有的 `exec` 使用描述符中的内置程序绝对路径及显式 socket 调用 CLI，`read` 向模型提供截图。整个流程不使用自定义插件、MCP 代理、node host、配对或运行时下载。
-- **配置交付**：Gateway 运行时由 Main 使用 `config.get` / `config.set`，停止或启动中则更新解析后的 JSON5 配置；普通 Provider/Agent/Skill/模型修改不会替换进程，凭据通过 `secrets.reload` 热更新。连续三分钟没有已验证的 Gateway 活动后，ClawX 会验证核心 RPC，并且只重启其自身拥有且不可用的 Gateway 进程；外部管理的 Gateway 保留给用户手动恢复。
-- **ACP Chat**：Chat UI 基于 ACP ([Agent Client Protocol](https://agentclientprotocol.com)) 与 OpenClaw 交互，从而在高速迭代的 OpenClaw 前找到相对稳定的聊天协议面。ACP 走 Main 持有的 stdio bridge，支持配置热重载后的历史回放认证、跨页面持续流式输出，以及由 Main 验证和加载的媒体/附件/文件活动（Changes）展示。通过原生拖拽或文件选择器添加的文件直接引用其规范化源路径，不再创建 ClawX 暂存副本；有路径的图片会继续作为 ACP 资源链接传递，不会再被 OpenClaw 重新写入 `media/inbound`，因此源文件后续发生修改、移动或删除时会影响附件。剪贴板等没有稳定路径的字节附件仍使用受保护的临时暂存和内联图片传输。当 ACP 遗漏资源块时，经 OpenClaw internal-UI message 工具确认交付的生成文件（包括 Excel 工作簿）会恢复为附件卡片。已确认接收的请求最多等待 Main 计算出的 8 分钟重启预算；未确认请求保留 5 秒断线期限。重连时，即使会话列表暂时缺项，界面也会保留正在执行的对话。当受保护的 Gateway 重启中断已接收的对话轮次时，补丁后的 OpenClaw 运行时会将恢复 run 显式关联到原 ACP prompt，使后续文本和工具活动继续进入同一个内存轮次；之后的历史回放也会以原生 ACP 更新恢复持久化的工具边界。如果最终答复持久化后再次重启导致终态通知丢失，按 run 和会话范围执行的结算会结束 pending prompt，避免 Chat 一直显示执行中。 Chat 回复中的显式本地文件链接可在点击后打开受会话校验的文件预览或系统应用，支持工作空间以外的文件；文件不可用时会显示提示。 工具卡片通过本地化名称和图标区分执行代码、执行命令与列出文件。 重新进入对话时，ACP 适配器还会把较新的离线完成消息从原生历史补回自身账本，后续继续聊天或重新加载时仍可显示，并避免重复。 手动和自动上下文压缩也会通过 ACP 展示生命周期，包括当前对话在外部触发的压缩。
+- **配置交付**：Gateway 运行时由 Main 使用 `config.get` / `config.set`，停止或启动中则更新解析后的 JSON5 配置；普通 Provider/Agent/Skill/模型修改不会替换进程，凭据通过 `secrets.reload` 热更新。连续三分钟没有已验证的 Gateway 活动后，KYNEX 会验证核心 RPC，并且只重启其自身拥有且不可用的 Gateway 进程；外部管理的 Gateway 保留给用户手动恢复。
+- **ACP Chat**：Chat UI 基于 ACP ([Agent Client Protocol](https://agentclientprotocol.com)) 与 OpenClaw 交互，从而在高速迭代的 OpenClaw 前找到相对稳定的聊天协议面。ACP 走 Main 持有的 stdio bridge，支持配置热重载后的历史回放认证、跨页面持续流式输出，以及由 Main 验证和加载的媒体/附件/文件活动（Changes）展示。通过原生拖拽或文件选择器添加的文件直接引用其规范化源路径，不再创建 KYNEX 暂存副本；有路径的图片会继续作为 ACP 资源链接传递，不会再被 OpenClaw 重新写入 `media/inbound`，因此源文件后续发生修改、移动或删除时会影响附件。剪贴板等没有稳定路径的字节附件仍使用受保护的临时暂存和内联图片传输。当 ACP 遗漏资源块时，经 OpenClaw internal-UI message 工具确认交付的生成文件（包括 Excel 工作簿）会恢复为附件卡片。已确认接收的请求最多等待 Main 计算出的 8 分钟重启预算；未确认请求保留 5 秒断线期限。重连时，即使会话列表暂时缺项，界面也会保留正在执行的对话。当受保护的 Gateway 重启中断已接收的对话轮次时，补丁后的 OpenClaw 运行时会将恢复 run 显式关联到原 ACP prompt，使后续文本和工具活动继续进入同一个内存轮次；之后的历史回放也会以原生 ACP 更新恢复持久化的工具边界。如果最终答复持久化后再次重启导致终态通知丢失，按 run 和会话范围执行的结算会结束 pending prompt，避免 Chat 一直显示执行中。 Chat 回复中的显式本地文件链接可在点击后打开受会话校验的文件预览或系统应用，支持工作空间以外的文件；文件不可用时会显示提示。 工具卡片通过本地化名称和图标区分执行代码、执行命令与列出文件。 重新进入对话时，ACP 适配器还会把较新的离线完成消息从原生历史补回自身账本，后续继续聊天或重新加载时仍可显示，并避免重复。 手动和自动上下文压缩也会通过 ACP 展示生命周期，包括当前对话在外部触发的压缩。
 - **设计原则**：前端调用单一入口、Main 掌控传输策略、优雅恢复（重连/超时/退避）、安全存储与 CORS 安全。
 
 > 完整架构说明（进程图、配置协调、ACP 文件活动语义与 Gateway 排障）请参阅 [docs/zh-CN/architecture.md](docs/zh-CN/architecture.md)。
@@ -220,7 +220,7 @@ pnpm package         # 为当前平台打包（可用 :mac / :win / :linux 后�
 
 ## 参与贡献
 
-我们欢迎社区的各种贡献！无论是修复 Bug、开发新功能、改进文档还是翻译——每一份贡献都让 ClawX 变得更好。
+我们欢迎社区的各种贡献！无论是修复 Bug、开发新功能、改进文档还是翻译——每一份贡献都让 KYNEX 变得更好。
 
 ### 如何贡献
 
@@ -238,7 +238,7 @@ pnpm package         # 为当前平台打包（可用 :mac / :win / :linux 后�
 
 ## 致谢
 
-ClawX 构建于以下优秀的开源项目之上：
+KYNEX 构建于以下优秀的开源项目之上：
 
 - [OpenClaw](https://github.com/OpenClaw) – AI 智能体运行时
 - [LobsterAI](https://github.com/netease-youdao/lobsterai) – Gateway 存活信号与恢复设计的灵感来源
@@ -257,11 +257,11 @@ ClawX 构建于以下优秀的开源项目之上：
 | :---: | :---: | :---: |
 | <img src="src/assets/community/wecom-qr.png" width="150" alt="企业微信二维码" /> | <img src="src/assets/community/feishu-qr.png" width="150" alt="飞书二维码" /> | <img src="src/assets/community/20260212-185822.png" width="150" alt="Discord 二维码" /> |
 
-### ClawX 合作伙伴计划 🚀
+### KYNEX 合作伙伴计划 🚀
 
-我们正在启动 ClawX 合作伙伴计划，寻找能够帮助我们将 ClawX 介绍给更多客户的合作伙伴，尤其是那些有定制化 AI 智能体或自动化需求的客户。
+我们正在启动 KYNEX 合作伙伴计划，寻找能够帮助我们将 KYNEX 介绍给更多客户的合作伙伴，尤其是那些有定制化 AI 智能体或自动化需求的客户。
 
-合作伙伴负责帮助我们连接潜在用户和项目，ClawX 团队则提供完整的技术支持、定制开发与集成服务。如果你服务的客户对 AI 工具或自动化方案感兴趣，欢迎与我们合作。
+合作伙伴负责帮助我们连接潜在用户和项目，KYNEX 团队则提供完整的技术支持、定制开发与集成服务。如果你服务的客户对 AI 工具或自动化方案感兴趣，欢迎与我们合作。
 
 欢迎私信我们，或发送邮件至 [public@valuecell.ai](mailto:public@valuecell.ai) 了解更多。
 
@@ -269,13 +269,13 @@ ClawX 构建于以下优秀的开源项目之上：
 ## Stars 历史
 
 <p align="center">
-  <img src="https://star-history.dera.page/svg?repos=ValueCell-ai/ClawX&type=Date" alt="Stars 历史图表" />
+  <img src="https://star-history.dera.page/svg?repos=wasimmostakim2965-ui/KYNEX&type=Date" alt="Stars 历史图表" />
 </p>
 
 
 ## 许可证
 
-ClawX 基于 [MIT 许可证](LICENSE) 发布。你可以自由地使用、修改和分发本软件。
+KYNEX 基于 [MIT 许可证](LICENSE) 发布。你可以自由地使用、修改和分发本软件。
 
 <hr>
 

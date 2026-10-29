@@ -5,7 +5,7 @@
  *
  * electron-builder skips CHECK_APP_RUNNING for assisted installers when
  * UAC_IsInnerInstance is true. Per-machine upgrades run the actual file
- * replacement in that inner process, so the old ClawX.exe can remain alive,
+ * replacement in that inner process, so the old KYNEX.exe can remain alive,
  * keep $INSTDIR locked, and make the installer appear successful while the old
  * files remain installed.
  */
@@ -40,7 +40,7 @@ const PATCHED_ASSISTED_CHECK = [
   '!else',
   `  ; ${PATCH_MARKER}.`,
   '  ; Per-machine assisted upgrades perform the actual install in the elevated',
-  '  ; UAC inner instance; skipping CHECK_APP_RUNNING there can leave ClawX.exe',
+  '  ; UAC inner instance; skipping CHECK_APP_RUNNING there can leave KYNEX.exe',
   '  ; alive and make the installer false-succeed with old files still present.',
   '  !insertmacro CHECK_APP_RUNNING',
   '!endif',

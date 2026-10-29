@@ -12,7 +12,7 @@ import { parse } from 'yaml';
 const require = createRequire(import.meta.url);
 const builderRequire = createRequire(require.resolve('electron-builder'));
 const asar = createRequire(builderRequire.resolve('app-builder-lib'))('@electron/asar');
-const sourceResources = resolve(process.argv.slice(2).find(arg => !arg.startsWith('--')) || 'release/mac-arm64/ClawX.app/Contents/Resources');
+const sourceResources = resolve(process.argv.slice(2).find(arg => !arg.startsWith('--')) || 'release/mac-arm64/KYNEX.app/Contents/Resources');
 const baseline = process.argv.includes('--baseline');
 const artifact = process.argv.includes('--artifact');
 assert(!(baseline && artifact), '--baseline and --artifact are separate checks');
