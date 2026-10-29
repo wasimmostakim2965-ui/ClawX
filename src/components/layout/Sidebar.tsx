@@ -51,7 +51,7 @@ import { hostApi } from '@/lib/host-api';
 import { formatSessionRelativeTime } from '@/lib/relative-time';
 import { SIDEBAR_COLLAPSED_WIDTH, MAC_SIDEBAR_CHROME_HEIGHT } from '@shared/sidebar-layout';
 import { useTranslation } from 'react-i18next';
-import logoSvg from '@/assets/logo.svg';
+import kynexMark from '@/assets/kynex-mark.png';
 import { useNewChatAction } from './use-new-chat-action';
 import { isDefaultWorkspacePath } from '@/lib/workspace-context';
 import { useWorkspaceAvailability } from '@/hooks/use-workspace-availability';
@@ -501,8 +501,10 @@ export function Sidebar() {
       >
         {!sidebarCollapsed && (
           <div className="flex items-center gap-2 px-2 overflow-hidden">
-            <img src={logoSvg} alt="KYNEX" className="h-5 w-auto shrink-0" />
-            <span className="text-sm font-semibold truncate whitespace-nowrap text-foreground/90">KYNEX</span>
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-md border border-black/5 bg-white p-0.5 shadow-sm dark:border-white/10">
+              <img data-testid="sidebar-brand-mark" src={kynexMark} alt="Kynex" className="h-full w-full object-contain" />
+            </span>
+            <span className="text-sm font-semibold truncate whitespace-nowrap text-foreground/90">Kynex</span>
           </div>
         )}
         <Button
