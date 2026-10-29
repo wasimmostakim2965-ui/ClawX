@@ -174,7 +174,7 @@ describe('ensureClawXIdentityFile', () => {
 
     await ensureClawXIdentityFile(workspaceDir);
 
-    await expect(readFile(join(workspaceDir, 'IDENTITY.md'), 'utf-8')).resolves.toContain('KYNEX');
+    await expect(readFile(join(workspaceDir, 'IDENTITY.md'), 'utf-8')).resolves.toContain('- **Name:** Kynex');
   });
 
   it('replaces the untouched OpenClaw identity template but preserves custom identities', async () => {
@@ -201,7 +201,7 @@ describe('ensureClawXIdentityFile', () => {
     );
 
     await ensureClawXIdentityFile(workspaceDir);
-    await expect(readFile(join(workspaceDir, 'IDENTITY.md'), 'utf-8')).resolves.toContain('KYNEX');
+    await expect(readFile(join(workspaceDir, 'IDENTITY.md'), 'utf-8')).resolves.toContain('- **Name:** Kynex');
     await expect(readFile(join(workspaceDir, 'IDENTITY.md'), 'utf-8')).resolves.not.toContain('pick something you like');
 
     await writeFile(join(workspaceDir, 'IDENTITY.md'), '# IDENTITY.md\n\n- **Name:** Paisley\n', 'utf-8');
@@ -228,10 +228,18 @@ describe('ensureClawXIdentityFile', () => {
     await ensureClawXIdentityFile(workspaceDir);
 
     const migrated = await readFile(identityPath, 'utf-8');
-    expect(migrated).toContain('# IDENTITY.md - KYNEX');
-    expect(migrated).toContain('- **Name:** KYNEX');
-    expect(migrated).toContain('- **Vibe:** user-customized vibe');
-    expect(migrated).not.toContain('ClawX');
+    const original = [
+      '# IDENTITY.md - ClawX',
+      '',
+      '- **Name:** ClawX',
+      '- **Creature:** desktop AI assistant',
+      '- **Vibe:** user-customized vibe',
+      '- **Emoji:** 🐾',
+      '',
+      'ClawX uses a default desktop identity instead of chat-first bootstrap.',
+      '',
+    ].join('\n');
+    expect(migrated).toBe(original.replace('- **Name:** ClawX', '- **Name:** Kynex'));
   });
 
   it('does not rename a user-customized ClawX identity without the app-owned marker', async () => {
@@ -254,7 +262,7 @@ describe('ensureClawXIdentityFile', () => {
     await ensureClawXIdentityFile(workspaceDir);
 
     await expect(access(join(workspaceDir, 'BOOTSTRAP.md'))).rejects.toThrow();
-    await expect(readFile(join(workspaceDir, 'IDENTITY.md'), 'utf-8')).resolves.toContain('KYNEX');
+    await expect(readFile(join(workspaceDir, 'IDENTITY.md'), 'utf-8')).resolves.toContain('- **Name:** Kynex');
   });
 });
 
@@ -262,7 +270,7 @@ describe('ensureClawXDefaultIdentity', () => {
   it('creates the default workspace and seeds IDENTITY.md for startup-owned workspaces', async () => {
     await ensureClawXDefaultIdentity();
 
-    await expect(readFile(join(testHome, '.openclaw', 'workspace', 'IDENTITY.md'), 'utf-8')).resolves.toContain('KYNEX');
+    await expect(readFile(join(testHome, '.openclaw', 'workspace', 'IDENTITY.md'), 'utf-8')).resolves.toContain('- **Name:** Kynex');
   });
 });
 

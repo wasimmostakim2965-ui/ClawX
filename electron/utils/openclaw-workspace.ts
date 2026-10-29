@@ -33,7 +33,7 @@ export function buildDefaultClawXIdentityContent(): string {
   return [
     '# IDENTITY.md - KYNEX',
     '',
-    '- **Name:** KYNEX',
+    '- **Name:** Kynex',
     '- **Creature:** desktop AI assistant',
     '- **Vibe:** concise, capable, and practical',
     '- **Emoji:** 🐾',
@@ -45,15 +45,11 @@ export function buildDefaultClawXIdentityContent(): string {
 }
 
 function migratePreviousDefaultIdentity(existing: string): string | null {
-  const normalized = existing.replace(/\r\n/g, '\n');
   const previousDefaultMarker = 'ClawX uses a default desktop identity instead of chat-first bootstrap.';
-  if (!normalized.includes(previousDefaultMarker) || !/^\s*- \*\*Name:\*\* ClawX\s*$/m.test(normalized)) {
+  if (!existing.includes(previousDefaultMarker) || !/^[ \t]*- \*\*Name:\*\* ClawX[ \t]*\r?$/m.test(existing)) {
     return null;
   }
-  return normalized
-    .replace('# IDENTITY.md - ClawX', '# IDENTITY.md - KYNEX')
-    .replace(/(^\s*- \*\*Name:\*\* )ClawX(\s*$)/m, '$1KYNEX$2')
-    .replace(previousDefaultMarker, 'KYNEX uses a default desktop identity instead of chat-first bootstrap.');
+  return existing.replace(/^([ \t]*- \*\*Name:\*\* )ClawX([ \t]*\r?)$/m, '$1Kynex$2');
 }
 
 export function isOpenClawIdentityTemplate(content: string): boolean {
