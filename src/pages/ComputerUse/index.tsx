@@ -60,13 +60,13 @@ export function ComputerUse() {
     : !status.enabled ? 'off' : status.running ? 'running' : 'unavailable';
 
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-6 p-4 sm:p-8" data-testid="computer-use-page">
-      <header className="space-y-2">
-        <h1 className="font-serif text-3xl font-normal tracking-tight">{t('computerUse.title')}</h1>
-        <p className="text-sm text-muted-foreground">{t('computerUse.description')}</p>
+    <div className="mx-auto w-full max-w-4xl space-y-6 sm:space-y-8 p-5 sm:p-8 lg:py-10" data-testid="computer-use-page">
+      <header className="space-y-3 border-b border-black/5 dark:border-white/10 pb-6 sm:pb-7">
+        <h1 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight">{t('computerUse.title')}</h1>
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">{t('computerUse.description')}</p>
       </header>
       {failed && <p role="alert" className="text-sm text-red-700 dark:text-red-400">{t('computerUse.error')}</p>}
-      <section className="space-y-4 rounded-xl border bg-surface-modal p-5" aria-busy={busy}>
+      <section className="space-y-5 rounded-2xl border border-black/5 dark:border-white/10 bg-surface-modal p-5 sm:p-6 shadow-sm" aria-busy={busy}>
         <div className="flex items-center justify-between gap-4">
           <label htmlFor="computer-use-enabled" className="font-medium">{t('computerUse.enable')}</label>
           <Switch id="computer-use-enabled" data-testid="computer-use-toggle" checked={status?.enabled ?? false}
@@ -83,14 +83,14 @@ export function ComputerUse() {
         )}
       </section>
       {permissions && (
-        <section className="space-y-4 rounded-xl border bg-surface-modal p-5">
+        <section className="space-y-5 rounded-2xl border border-black/5 dark:border-white/10 bg-surface-modal p-5 sm:p-6 shadow-sm">
           <h2 className="font-serif text-xl font-normal tracking-tight">{t('computerUse.permissions')}</h2>
-          <dl className="space-y-3 text-sm">
-            <div className="flex flex-wrap justify-between gap-2">
+          <dl className="space-y-0 divide-y divide-black/5 dark:divide-white/10 rounded-xl border border-black/5 dark:border-white/10 px-4">
+            <div className="flex flex-wrap justify-between gap-2 py-3 text-sm">
               <dt>{t('computerUse.accessibility')}</dt>
               <dd data-testid="computer-use-accessibility">{t(`computerUse.${permissions.accessibility ? 'granted' : 'notGranted'}`)}</dd>
             </div>
-            <div className="flex flex-wrap justify-between gap-2">
+            <div className="flex flex-wrap justify-between gap-2 py-3 text-sm">
               <dt>{t('computerUse.screenRecording')}</dt>
               <dd data-testid="computer-use-screen-recording">{t(`computerUse.${permissions.screenRecording === 'granted' ? 'granted' : 'notGranted'}`)}</dd>
             </div>
@@ -106,7 +106,7 @@ export function ComputerUse() {
           )}
         </section>
       )}
-      <Button variant="outline" disabled={busy} onClick={() => void run(hostApi.computerUse.status)}>{t('actions.refresh')}</Button>
+      <div className="flex justify-end"><Button variant="outline" disabled={busy} onClick={() => void run(hostApi.computerUse.status)}>{t('actions.refresh')}</Button></div>
     </div>
   );
 }

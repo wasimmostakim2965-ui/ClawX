@@ -489,9 +489,9 @@ export function Skills() {
       data-testid="skills-page"
       className="flex flex-col -m-6 dark:bg-background h-[calc(100vh-2.5rem)] overflow-hidden"
     >
-      <div className="w-full max-w-5xl mx-auto flex flex-col h-full p-10 pt-16 pb-0">
+      <div className="w-full max-w-6xl mx-auto flex flex-col h-full px-8 md:px-10 pt-12 md:pt-14 pb-0">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 shrink-0 gap-4">
+        <div className="flex flex-col md:flex-row md:items-start justify-between mb-7 shrink-0 gap-4 border-b border-black/5 dark:border-white/10 pb-7">
           <div>
             <h1 className="text-5xl md:text-6xl font-serif text-foreground mb-3 font-normal tracking-tight">
               {t('title')}
@@ -525,7 +525,7 @@ export function Skills() {
         )}
 
         {/* Sub Navigation and Actions */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-black/10 dark:border-white/10 pb-4 mb-4 shrink-0 gap-4">
+        <div className="flex flex-col md:flex-row md:items-center justify-between rounded-2xl border border-black/[0.07] dark:border-white/[0.08] bg-white/45 dark:bg-white/[0.025] px-4 py-3 mb-5 shrink-0 gap-4 shadow-sm">
           <div className="flex items-center flex-wrap gap-2 text-sm">
             <div className="relative group flex items-center bg-black/5 dark:bg-white/5 rounded-full px-3 py-1.5 focus-within:bg-black/10 transition-colors border border-transparent focus-within:border-black/10 dark:focus-within:border-white/10 mr-2">
               <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
@@ -603,7 +603,7 @@ export function Skills() {
             </div>
           )}
 
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-2.5">
             {filteredSkills.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-20 text-muted-foreground">
                 <Puzzle className="h-10 w-10 mb-4 opacity-50" />
@@ -613,11 +613,11 @@ export function Skills() {
               filteredSkills.map((skill) => (
                 <div
                   key={skill.id}
-                  className="group flex flex-row items-center justify-between py-3.5 px-3 rounded-xl hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer border-b border-black/5 dark:border-white/5 last:border-0"
+                  className="group flex flex-row items-center justify-between py-4 px-4 md:px-5 rounded-2xl hover:bg-white/90 dark:hover:bg-white/[0.055] transition-all cursor-pointer border border-black/[0.07] dark:border-white/[0.08] bg-white/45 dark:bg-white/[0.02] hover:border-black/15 dark:hover:border-white/15 hover:shadow-sm"
                   onClick={() => setSelectedSkill(skill)}
                 >
                   <div className="flex items-start gap-4 flex-1 overflow-hidden pr-4">
-                    <div className="h-10 w-10 shrink-0 flex items-center justify-center text-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl overflow-hidden">
+                    <div className="h-11 w-11 shrink-0 flex items-center justify-center text-2xl bg-black/[0.04] dark:bg-white/[0.06] border border-black/[0.06] dark:border-white/10 rounded-2xl overflow-hidden shadow-sm">
                       {skill.icon || '🧩'}
                     </div>
                     <div className="flex flex-col overflow-hidden">

@@ -287,15 +287,15 @@ export function Models() {
   return (
     <div
       data-testid="models-page"
-      className="flex flex-col -m-6 dark:bg-background h-[calc(100vh-2.5rem)] overflow-hidden"
+      className="flex flex-col -m-6 bg-gradient-to-b from-muted/30 via-background to-background dark:bg-background h-[calc(100vh-2.5rem)] overflow-hidden"
     >
-      <div className="w-full max-w-5xl mx-auto flex flex-col h-full p-10 pt-16 pb-0">
+      <div className="w-full max-w-6xl mx-auto flex flex-col h-full px-8 md:px-10 pt-10 md:pt-12 pb-0">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between mb-12 shrink-0 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 shrink-0 gap-4 border-b border-border/70 pb-7">
           <div>
             <h1
               data-testid="models-page-title"
-              className="text-5xl md:text-6xl font-serif text-foreground mb-3 font-normal tracking-tight"
+              className="text-4xl md:text-5xl font-serif text-foreground mb-2 font-normal tracking-tight"
             >
               {t('dashboard:models.title')}
             </h1>
@@ -304,7 +304,7 @@ export function Models() {
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto pr-2 pb-10 min-h-0 -mr-2 space-y-12">
+        <div className="flex-1 overflow-y-auto pr-2 pb-10 min-h-0 -mr-2 space-y-10">
           <Tabs
             value={selectedManagementTab}
             onValueChange={(value) => {
@@ -320,30 +320,30 @@ export function Models() {
             }}
             data-testid="models-management-tabs"
           >
-            <TabsList>
-              <TabsTrigger value="chat" data-testid="models-tab-chat">
+            <TabsList className="h-auto rounded-2xl border border-border/70 bg-card/70 p-1.5 shadow-sm">
+              <TabsTrigger value="chat" data-testid="models-tab-chat" className="rounded-xl px-5 py-2.5">
                 {t('dashboard:models.tabs.chat')}
               </TabsTrigger>
               {devModeUnlocked && (
                 <>
-                  <TabsTrigger value="voice" data-testid="models-tab-voice">
+                  <TabsTrigger value="voice" data-testid="models-tab-voice" className="rounded-xl px-5 py-2.5">
                     {t('dashboard:models.tabs.voice')}
                   </TabsTrigger>
-                  <TabsTrigger value="image-generation" data-testid="models-tab-image-generation">
+                  <TabsTrigger value="image-generation" data-testid="models-tab-image-generation" className="rounded-xl px-5 py-2.5">
                     {t('dashboard:models.tabs.imageGeneration')}
                   </TabsTrigger>
                 </>
               )}
             </TabsList>
-            <TabsContent value="chat" className="mt-8">
+            <TabsContent value="chat" className="mt-6">
               <ProvidersSettings />
             </TabsContent>
             {devModeUnlocked && (
               <>
-                <TabsContent value="voice" className="mt-8">
+                <TabsContent value="voice" className="mt-6">
                   <AsrSettings />
                 </TabsContent>
-                <TabsContent value="image-generation" className="mt-8">
+                <TabsContent value="image-generation" className="mt-6">
                   <ImageGenerationSettings />
                 </TabsContent>
               </>
@@ -351,7 +351,7 @@ export function Models() {
           </Tabs>
 
           {(!devModeUnlocked || selectedManagementTab === 'chat') && <div>
-            <h2 className="text-3xl font-serif text-foreground mb-6 font-normal tracking-tight">
+            <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-5 font-normal tracking-tight">
               {t('dashboard:recentTokenHistory.title', 'Token Usage History')}
             </h2>
             <div>
@@ -368,7 +368,7 @@ export function Models() {
                   <FeedbackState state="empty" title={t('dashboard:recentTokenHistory.emptyForWindow')} />
                 </div>
               ) : (
-                <div className="space-y-6">
+                <div className="space-y-5 rounded-3xl border border-border/70 bg-card/60 p-5 md:p-6 shadow-sm">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex flex-wrap items-center gap-3">
                       <div className="flex rounded-xl bg-transparent p-1 border border-black/10 dark:border-white/10">
@@ -472,7 +472,7 @@ export function Models() {
                       <div
                         key={`${entry.sessionId}-${entry.timestamp}`}
                         data-testid="token-usage-entry"
-                        className="rounded-2xl bg-transparent border border-black/10 dark:border-white/10 p-5 hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+                        className="rounded-2xl bg-background/75 border border-border/70 p-5 hover:border-primary/25 hover:shadow-md hover:shadow-black/[0.03] transition-all"
                       >
                         <div className="flex items-start justify-between gap-3">
                           <div className="min-w-0">
@@ -666,7 +666,7 @@ function UsageBarChart({
   const maxTokens = Math.max(...groups.map((group) => group.totalTokens), 1);
 
   return (
-    <div className="space-y-4 bg-transparent p-5 rounded-2xl border border-black/10 dark:border-white/10">
+    <div className="space-y-4 bg-background/70 p-5 md:p-6 rounded-2xl border border-border/70 shadow-inner shadow-black/[0.02]">
       <div className="flex flex-wrap gap-4 text-meta font-medium text-muted-foreground mb-2">
         <span className="inline-flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-usage-input" />

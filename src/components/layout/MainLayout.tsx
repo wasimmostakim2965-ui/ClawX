@@ -8,11 +8,14 @@ import { TitleBar } from './TitleBar';
 import { MAC_SIDEBAR_CHROME_HEIGHT } from '@shared/sidebar-layout';
 import { cn } from '@/lib/utils';
 import { WebBrowserHost } from '@/components/web-browser/WebBrowserHost';
+import { useGatewayStore } from '@/stores/gateway';
 
 export function MainLayout() {
   const platform = window.electron?.platform;
   const isMac = platform === 'darwin';
   const isWin = platform === 'win32';
+  const gatewayStatus = useGatewayStore((state) => state.status);
+  const gatewayReady = gatewayStatus.state === 'running' && gatewayStatus.gatewayReady !== false;
 
   return (
     <div
@@ -47,6 +50,15 @@ export function MainLayout() {
         </main>
         <WebBrowserHost />
       </div>
+      {gatewayReady && (
+        <span
+          data-testid="gateway-ready-indicator"
+          role="status"
+          aria-label="Gateway ready"
+          title="Gateway ready"
+          className="pointer-events-none fixed bottom-3 right-4 z-[100] h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_0_3px_hsl(var(--background)),0_0_12px_hsl(142_71%_45%/0.45)]"
+        />
+      )}
     </div>
   );
 }

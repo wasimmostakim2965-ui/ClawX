@@ -520,8 +520,8 @@ export function Channels() {
       data-testid="channels-page"
       className="flex flex-col -m-6 dark:bg-background h-[calc(100vh-2.5rem)] overflow-hidden"
     >
-      <div className="w-full max-w-5xl mx-auto flex flex-col h-full p-10 pt-16 pb-0">
-        <div className="flex flex-col md:flex-row md:items-start justify-between mb-12 shrink-0 gap-4">
+      <div className="w-full max-w-6xl mx-auto flex flex-col h-full px-8 md:px-10 pt-12 md:pt-14 pb-0">
+        <div className="flex flex-col md:flex-row md:items-start justify-between mb-10 shrink-0 gap-4 border-b border-black/5 dark:border-white/10 pb-7">
           <div>
             <h1 className="text-5xl md:text-6xl font-serif text-foreground mb-3 font-normal tracking-tight">
               {t('title')}
@@ -652,11 +652,11 @@ export function Channels() {
           {configuredGroups.length > 0 && (
             <div className="mb-12">
               <h2 className="text-3xl font-serif text-foreground mb-6 font-normal tracking-tight">{t('configured')}</h2>
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                 {configuredGroups.map((group) => (
                   <div
                     key={group.channelType}
-                    className="rounded-2xl border border-black/10 dark:border-white/10 p-4 bg-transparent"
+                    className="rounded-2xl border border-black/[0.08] dark:border-white/10 p-5 bg-white/50 dark:bg-white/[0.025] shadow-sm transition-colors hover:bg-white/75 dark:hover:bg-white/[0.04]"
                   >
                     <div className="flex items-center justify-between gap-2 mb-3">
                       <div className="flex items-center gap-3 min-w-0">
@@ -777,7 +777,7 @@ export function Channels() {
                         return (
                           <div
                             key={`${group.channelType}-${account.accountId}`}
-                            className="rounded-xl bg-black/5 dark:bg-white/5 px-3 py-2"
+                            className="rounded-xl border border-black/[0.04] dark:border-white/[0.06] bg-black/[0.025] dark:bg-white/[0.035] px-3.5 py-3"
                           >
                             <div className="flex items-center justify-between gap-3">
                               <div className="min-w-0">
@@ -867,7 +867,7 @@ export function Channels() {
               {t('supportedChannels')}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {unsupportedGroups.map((type) => {
                 const meta = CHANNEL_META[type];
                 return (
@@ -883,7 +883,7 @@ export function Channels() {
                       setShowConfigModal(true);
                     }}
                     className={cn(
-                      'group flex items-start gap-4 p-4 rounded-2xl transition-all text-left border relative overflow-hidden bg-transparent border-transparent hover:bg-black/5 dark:hover:bg-white/5',
+                      'group flex items-start gap-4 p-5 rounded-2xl transition-all text-left border relative overflow-hidden bg-white/45 dark:bg-white/[0.02] border-black/[0.07] dark:border-white/[0.08] hover:bg-white/80 dark:hover:bg-white/[0.05] hover:border-black/15 dark:hover:border-white/15 hover:shadow-sm',
                     )}
                   >
                     <div className="h-[46px] w-[46px] shrink-0 flex items-center justify-center text-foreground bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-full shadow-sm mb-3">

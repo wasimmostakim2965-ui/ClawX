@@ -449,25 +449,25 @@ export function Settings() {
       data-testid="settings-page"
       className="flex flex-col -m-6 dark:bg-background h-[calc(100vh-2.5rem)] overflow-hidden"
     >
-      <div className="w-full max-w-5xl mx-auto flex flex-col h-full p-10 pt-16 pb-0">
+      <div className="w-full max-w-6xl mx-auto flex flex-col h-full px-5 sm:px-8 lg:px-10 pt-8 sm:pt-10 pb-0">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between mb-12 shrink-0 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 shrink-0 gap-4 border-b border-black/5 dark:border-white/10 pb-6">
           <div>
-            <h1 className="text-5xl md:text-6xl font-serif text-foreground mb-3 font-normal tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-2 font-normal tracking-tight">
               {t('title')}
             </h1>
-            <p className="text-subtitle text-foreground/70 font-medium">{t('subtitle')}</p>
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl leading-relaxed">{t('subtitle')}</p>
           </div>
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto pr-2 pb-10 min-h-0 -mr-2 space-y-12">
+        <div className="flex-1 overflow-y-auto pr-2 pb-10 min-h-0 -mr-2 space-y-8 sm:space-y-10">
           {/* Appearance */}
           <div>
-            <h2 className="text-3xl font-serif text-foreground mb-6 font-normal tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-serif text-foreground mb-5 font-normal tracking-tight">
               {t('appearance.title')}
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-6 rounded-2xl border border-black/5 dark:border-white/10 bg-surface-modal p-5 sm:p-6 shadow-sm">
               <div className="space-y-3">
                 <Label className="text-sm font-medium text-foreground/80">{t('appearance.theme')}</Label>
                 <div className="flex flex-wrap gap-2">
@@ -546,10 +546,10 @@ export function Settings() {
 
           {/* Gateway */}
           <div>
-            <h2 className="text-3xl font-serif text-foreground mb-6 font-normal tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-serif text-foreground mb-5 font-normal tracking-tight">
               {t('gateway.title')}
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-6 rounded-2xl border border-black/5 dark:border-white/10 bg-surface-modal p-5 sm:p-6 shadow-sm">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <Label className="text-sm font-medium text-foreground">{t('gateway.status')}</Label>
@@ -659,14 +659,14 @@ export function Settings() {
 
           {/* Support */}
           <div data-testid="settings-support-section">
-            <h2 className="mb-6 font-serif text-3xl font-normal tracking-tight text-foreground">
+            <h2 className="mb-5 font-serif text-2xl sm:text-3xl font-normal tracking-tight text-foreground">
               {t('support.title')}
             </h2>
             <IssueReportExport />
           </div>
 
           {/* Developer */}
-          <section id="developer" tabIndex={-1} data-testid="settings-developer-section" className="space-y-6 scroll-mt-6">
+          <section id="developer" tabIndex={-1} data-testid="settings-developer-section" className="space-y-6 scroll-mt-6 rounded-2xl border border-black/5 dark:border-white/10 bg-surface-modal p-5 sm:p-6 shadow-sm">
             <h2
               data-testid="settings-developer-title"
               className="text-3xl font-serif text-foreground font-normal tracking-tight"
@@ -1094,7 +1094,7 @@ export function Settings() {
 
           {/* Updates */}
           <div>
-            <h2 className="text-3xl font-serif text-foreground mb-6 font-normal tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-serif text-foreground mb-5 font-normal tracking-tight">
               {t('updates.title')}
             </h2>
             <div className="space-y-6">
@@ -1114,7 +1114,7 @@ export function Settings() {
 
           {/* About */}
           <div>
-            <h2 className="text-3xl font-serif text-foreground mb-6 font-normal tracking-tight">{t('about.title')}</h2>
+            <h2 className="text-2xl sm:text-3xl font-serif text-foreground mb-5 font-normal tracking-tight">{t('about.title')}</h2>
             <div className="space-y-3 text-sm text-muted-foreground">
               <p>
                 <strong className="text-foreground font-semibold">{t('about.appName')}</strong> - {t('about.tagline')}

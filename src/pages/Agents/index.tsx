@@ -109,12 +109,12 @@ export function Agents() {
   return (
     <div
       data-testid="agents-page"
-      className="flex flex-col -m-6 dark:bg-background h-[calc(100vh-2.5rem)] overflow-hidden"
+      className="flex flex-col -m-6 bg-gradient-to-b from-muted/30 via-background to-background dark:bg-background h-[calc(100vh-2.5rem)] overflow-hidden"
     >
-      <div className="w-full max-w-5xl mx-auto flex flex-col h-full p-10 pt-16 pb-0">
-        <div className="flex flex-col md:flex-row md:items-start justify-between mb-12 shrink-0 gap-4">
+      <div className="w-full max-w-6xl mx-auto flex flex-col h-full px-8 md:px-10 pt-10 md:pt-12 pb-0">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 shrink-0 gap-4 border-b border-border/70 pb-7">
           <div>
-            <h1 className="text-5xl md:text-6xl font-serif text-foreground mb-3 font-normal tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-2 font-normal tracking-tight">
               {t('title')}
             </h1>
             <p className="text-subtitle text-foreground/70 font-medium">{t('subtitle')}</p>
@@ -123,7 +123,7 @@ export function Agents() {
             <Button
               variant="outline"
               onClick={handleRefresh}
-              className="h-9 text-meta font-medium rounded-full px-4 border-black/10 dark:border-white/10 bg-transparent hover:bg-black/5 dark:hover:bg-white/5 shadow-none text-foreground/80 hover:text-foreground transition-colors"
+              className="h-10 text-meta font-medium rounded-xl px-4 border-border/80 bg-card/70 hover:bg-card shadow-sm text-foreground/80 hover:text-foreground transition-colors"
             >
               <RefreshCw className={cn('h-3.5 w-3.5 mr-2', isUsingStableValue && 'animate-spin')} />
               {t('refresh')}
@@ -131,7 +131,7 @@ export function Agents() {
             <Button
               data-testid="agents-add-button"
               onClick={() => setShowAddDialog(true)}
-              className="h-9 text-meta font-medium rounded-full px-4 shadow-none"
+              className="h-10 text-meta font-medium rounded-xl px-5 shadow-sm"
             >
               <Plus className="h-3.5 w-3.5 mr-2" />
               {t('addAgent')}
@@ -147,7 +147,7 @@ export function Agents() {
             </div>
           )}
 
-          <div className="space-y-3">
+          <div className="space-y-4 pb-2">
             {visibleAgents.map((agent) => (
               <AgentCard
                 key={agent.id}
@@ -238,15 +238,15 @@ function AgentCard({
     <div
       data-testid={`agent-card-${agent.id}`}
       className={cn(
-        'group flex items-start gap-4 p-4 rounded-2xl transition-all text-left border relative overflow-hidden bg-transparent border-transparent hover:bg-black/5 dark:hover:bg-white/5',
-        agent.isDefault && 'bg-black/[0.04] dark:bg-white/[0.06]',
+        'group flex items-start gap-4 md:gap-5 p-5 md:p-6 rounded-2xl transition-all text-left border relative overflow-hidden bg-card/75 border-border/70 shadow-sm hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg hover:shadow-black/[0.04]',
+        agent.isDefault && 'bg-gradient-to-r from-primary/[0.07] via-card/90 to-card/70 border-primary/20',
       )}
     >
-      <div className="h-[46px] w-[46px] shrink-0 flex items-center justify-center text-primary bg-primary/10 rounded-full shadow-sm mb-3">
+      <div className="h-12 w-12 shrink-0 flex items-center justify-center text-primary bg-primary/10 rounded-2xl ring-1 ring-primary/10">
         <Bot className="h-[22px] w-[22px]" />
       </div>
       <div className="flex flex-col flex-1 min-w-0 py-0.5 mt-1">
-        <div className="flex items-center justify-between gap-3 mb-1">
+        <div className="flex items-center justify-between gap-3 mb-2">
           <div className="flex items-center gap-2 min-w-0">
             <h2 className="text-base font-semibold text-foreground truncate">{agent.name}</h2>
             {agent.isDefault && (

@@ -1769,16 +1769,16 @@ export function Cron() {
       data-testid="cron-page"
       className="flex flex-col -m-6 dark:bg-background h-[calc(100vh-2.5rem)] overflow-hidden"
     >
-      <div className="w-full max-w-5xl mx-auto flex flex-col h-full p-10 pt-16 pb-0">
+      <div className="w-full max-w-6xl mx-auto flex flex-col h-full px-5 sm:px-8 lg:px-10 pt-8 sm:pt-10 pb-0">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between mb-12 shrink-0 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 shrink-0 gap-5 border-b border-black/5 dark:border-white/10 pb-6">
           <div>
-            <h1 className="text-5xl md:text-6xl font-serif text-foreground mb-3 font-normal tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-serif text-foreground mb-2 font-normal tracking-tight">
               {t('title')}
             </h1>
-            <p className="text-subtitle text-foreground/70 font-medium">{t('subtitle')}</p>
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl leading-relaxed">{t('subtitle')}</p>
           </div>
-          <div className="flex items-center gap-3 md:mt-2">
+          <div className="flex items-center gap-2.5 md:mt-0">
             <Button
               variant="outline"
               onClick={() => {
@@ -1825,8 +1825,8 @@ export function Cron() {
           )}
 
           {/* Statistics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="p-5 rounded-[24px] bg-black/5 dark:bg-white/5 border border-transparent flex flex-col justify-between min-h-[130px] relative overflow-hidden group hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+          <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 mb-8">
+            <div className="p-4 sm:p-5 rounded-2xl bg-surface-modal border border-black/5 dark:border-white/10 shadow-sm flex flex-col justify-between min-h-[118px] relative overflow-hidden group hover:border-primary/20 hover:shadow-md transition-all">
               <div className="flex items-center justify-between">
                 <div className="h-11 w-11 rounded-full bg-primary/10 flex items-center justify-center">
                   <Clock className="h-5 w-5 text-primary" />
@@ -1838,7 +1838,7 @@ export function Cron() {
               </div>
             </div>
 
-            <div className="p-5 rounded-[24px] bg-black/5 dark:bg-white/5 border border-transparent flex flex-col justify-between min-h-[130px] relative overflow-hidden group hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+            <div className="p-4 sm:p-5 rounded-2xl bg-surface-modal border border-black/5 dark:border-white/10 shadow-sm flex flex-col justify-between min-h-[118px] relative overflow-hidden group hover:border-primary/20 hover:shadow-md transition-all">
               <div className="flex items-center justify-between">
                 <div className="h-11 w-11 rounded-full bg-green-500/10 flex items-center justify-center">
                   <Play className="h-5 w-5 text-green-600 dark:text-green-500 ml-0.5" />
@@ -1850,7 +1850,7 @@ export function Cron() {
               </div>
             </div>
 
-            <div className="p-5 rounded-[24px] bg-black/5 dark:bg-white/5 border border-transparent flex flex-col justify-between min-h-[130px] relative overflow-hidden group hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+            <div className="p-4 sm:p-5 rounded-2xl bg-surface-modal border border-black/5 dark:border-white/10 shadow-sm flex flex-col justify-between min-h-[118px] relative overflow-hidden group hover:border-primary/20 hover:shadow-md transition-all">
               <div className="flex items-center justify-between">
                 <div className="h-11 w-11 rounded-full bg-yellow-500/10 flex items-center justify-center">
                   <Pause className="h-5 w-5 text-yellow-600 dark:text-yellow-500" />
@@ -1862,7 +1862,7 @@ export function Cron() {
               </div>
             </div>
 
-            <div className="p-5 rounded-[24px] bg-black/5 dark:bg-white/5 border border-transparent flex flex-col justify-between min-h-[130px] relative overflow-hidden group hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+            <div className="p-4 sm:p-5 rounded-2xl bg-surface-modal border border-black/5 dark:border-white/10 shadow-sm flex flex-col justify-between min-h-[118px] relative overflow-hidden group hover:border-primary/20 hover:shadow-md transition-all">
               <div className="flex items-center justify-between">
                 <div className="h-11 w-11 rounded-full bg-destructive/10 flex items-center justify-center">
                   <XCircle className="h-5 w-5 text-destructive" />
@@ -1877,7 +1877,7 @@ export function Cron() {
 
           {/* Jobs List */}
           {safeJobs.length === 0 ? (
-            <div className="flex flex-col items-center justify-center py-20 text-muted-foreground bg-black/5 dark:bg-white/5 rounded-3xl border border-transparent border-dashed">
+            <div className="flex flex-col items-center justify-center py-16 sm:py-20 text-muted-foreground bg-surface-modal rounded-3xl border border-dashed border-black/10 dark:border-white/10">
               <Clock className="h-10 w-10 mb-4 opacity-50" />
               <h3 className="text-lg font-medium mb-2 text-foreground">{t('empty.title')}</h3>
               <p className="text-sm text-center mb-6 max-w-md">{t('empty.description')}</p>
@@ -1894,7 +1894,7 @@ export function Cron() {
               </Button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {safeJobs.map((job) => {
                 const channelGroup = configuredChannels.find((group) => group.channelType === job.delivery?.channel);
                 const account = channelGroup?.accounts.find((item) => item.accountId === job.delivery?.accountId);
