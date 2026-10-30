@@ -190,6 +190,16 @@ function AcpEmptyState() {
           {t('welcome.subtitle')}
         </h1>
         <div aria-hidden="true" className="mx-auto mt-6 h-1 w-12 rounded-full bg-primary/70" />
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-2" aria-label={t('welcome.subtitle')}>
+          {[t('welcome.askQuestions'), t('welcome.creativeTasks'), t('welcome.brainstorming')].map((label) => (
+            <span
+              key={label}
+              className="rounded-full border border-primary/15 bg-primary/[0.06] px-3.5 py-1.5 text-xs font-medium text-foreground/70 shadow-sm dark:border-primary/20 dark:bg-primary/[0.12]"
+            >
+              {label}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -75,9 +75,11 @@ function NavItem({ to, icon, label, badge, collapsed, onClick, testId }: NavItem
       data-testid={testId}
       className={({ isActive }) =>
         cn(
-          'sidebar-nav-text flex items-center gap-2 rounded-lg px-2.5 py-1.5 transition-colors',
-          'hover:bg-black/5 dark:hover:bg-white/5 text-foreground/80',
-          isActive ? 'bg-black/5 dark:bg-white/10 text-foreground' : '',
+          'sidebar-nav-text group flex items-center gap-2 rounded-lg border px-2.5 py-1.5 transition-all',
+          'border-transparent text-foreground/75 hover:bg-black/5 hover:text-foreground dark:hover:bg-white/5',
+          isActive
+            ? 'border-primary/15 bg-primary/[0.08] font-medium text-primary dark:border-primary/20 dark:bg-primary/[0.14] dark:text-primary'
+            : '',
           collapsed && 'justify-center px-0',
         )
       }
@@ -529,8 +531,8 @@ export function Sidebar() {
           data-testid="sidebar-new-chat"
           onClick={handleNewChat}
           className={cn(
-            'sidebar-nav-text flex items-center gap-2 rounded-lg px-2.5 py-1.5 transition-colors',
-            'hover:bg-black/5 dark:hover:bg-white/5 text-foreground/80',
+            'sidebar-nav-text flex items-center gap-2 rounded-lg border border-primary/15 bg-primary/[0.07] px-2.5 py-1.5 font-medium text-primary transition-all',
+            'hover:border-primary/25 hover:bg-primary/[0.12] dark:border-primary/20 dark:bg-primary/[0.14] dark:hover:bg-primary/[0.2]',
             sidebarCollapsed && 'justify-center px-0',
           )}
         >
@@ -886,9 +888,9 @@ export function Sidebar() {
           data-testid="sidebar-nav-settings"
           className={({ isActive }) =>
             cn(
-              'sidebar-nav-text flex items-center gap-2 rounded-lg px-2.5 py-1.5 transition-colors',
-              'hover:bg-black/5 dark:hover:bg-white/5 text-foreground/80',
-              isActive && 'bg-black/5 dark:bg-white/10 text-foreground',
+              'sidebar-nav-text flex items-center gap-2 rounded-lg border px-2.5 py-1.5 transition-all',
+              'border-transparent text-foreground/75 hover:bg-black/5 hover:text-foreground dark:hover:bg-white/5',
+              isActive && 'border-primary/15 bg-primary/[0.08] font-medium text-primary dark:border-primary/20 dark:bg-primary/[0.14] dark:text-primary',
               sidebarCollapsed ? 'justify-center px-0' : '',
             )
           }
