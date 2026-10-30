@@ -37,7 +37,6 @@ import type { AcpTurnTiming } from '@/lib/acp/turn-timings';
 import { createEmptyAcpTimeline } from '@/lib/acp/reducer';
 import { projectOpenClawFileActivities, type AcpFileActivityProjection } from '@/lib/acp/openclaw-file-activities';
 import { hostApi } from '@/lib/host-api';
-import kynexMark from '@/assets/kynex-mark.png';
 import { getSessionDisplayTitle } from '@shared/chat/session-title';
 import { ChatInput, type ChatWorkspaceOption, type FileAttachment } from './ChatInput';
 import { ChatToolbar } from './ChatToolbar';
@@ -182,9 +181,6 @@ function AcpEmptyState() {
       className="relative flex h-[60vh] flex-col items-center justify-center overflow-hidden rounded-[2rem] px-6 text-center"
     >
       <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.07] blur-3xl" />
-      <div className="relative mb-7 grid h-[4.5rem] w-[4.5rem] place-items-center rounded-[1.45rem] border border-black/[0.07] bg-white p-2 shadow-[0_14px_44px_-22px_hsl(var(--primary)/0.55)] dark:border-white/10 dark:bg-white/[0.96]">
-        <img src={kynexMark} alt="" aria-hidden="true" className="h-full w-full rounded-xl object-contain" />
-      </div>
       <div className="relative max-w-2xl">
         <h1 className="text-balance text-3xl font-semibold leading-[1.12] tracking-[-0.045em] text-foreground md:text-[2.65rem]">
           {t('welcome.subtitle')}
