@@ -1,4 +1,4 @@
-[Download Windows installer (x64) — KYNEX 0.6.1](<https://github.com/wasimmostakim2965-ui/KYNEX/releases/download/run-40997661876/KYNEX-0.6.1-win-x64.exe>)
+[Download latest Windows installer (x64) — KYNEX 0.6.1](<https://github.com/wasimmostakim2965-ui/KYNEX/releases/download/run-41056773934/KYNEX-0.6.1-win-x64.exe>)
 <p align="center">
   <img src="src/assets/logo.svg" width="128" height="128" alt="KYNEX Logo" />
 </p>
