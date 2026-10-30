@@ -180,7 +180,6 @@ function AcpEmptyState() {
       data-testid="acp-chat-empty-state"
       className="relative flex h-[60vh] flex-col items-center justify-center overflow-hidden rounded-[2rem] px-6 text-center"
     >
-      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.07] blur-3xl" />
       <div className="relative max-w-2xl">
         <h1 className="text-balance text-3xl font-semibold leading-[1.12] tracking-[-0.045em] text-foreground md:text-[2.65rem]">
           {t('welcome.subtitle')}
